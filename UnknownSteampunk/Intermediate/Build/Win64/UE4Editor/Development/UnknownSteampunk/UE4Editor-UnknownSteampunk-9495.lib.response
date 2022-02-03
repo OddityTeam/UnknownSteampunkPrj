@@ -1,0 +1,17 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-UnknownSteampunk-9495.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\ik760\Documents\GitHub\UnknownSteampunk\UnknownSteampunk\Intermediate\Build\Win64\UnknownSteampunkEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"C:\Users\ik760\Documents\GitHub\UnknownSteampunk\UnknownSteampunk\Intermediate\Build\Win64\UE4Editor\Development\UnknownSteampunk\UnknownSteampunk.cpp.obj"
+"C:\Users\ik760\Documents\GitHub\UnknownSteampunk\UnknownSteampunk\Intermediate\Build\Win64\UE4Editor\Development\UnknownSteampunk\UnknownSteampunkCharacter.cpp.obj"
+"C:\Users\ik760\Documents\GitHub\UnknownSteampunk\UnknownSteampunk\Intermediate\Build\Win64\UE4Editor\Development\UnknownSteampunk\UnknownSteampunkGameMode.cpp.obj"
+"C:\Users\ik760\Documents\GitHub\UnknownSteampunk\UnknownSteampunk\Intermediate\Build\Win64\UE4Editor\Development\UnknownSteampunk\UnknownSteampunk.init.gen.cpp.obj"
+"C:\Users\ik760\Documents\GitHub\UnknownSteampunk\UnknownSteampunk\Intermediate\Build\Win64\UE4Editor\Development\UnknownSteampunk\UnknownSteampunkCharacter.gen.cpp.obj"
+"C:\Users\ik760\Documents\GitHub\UnknownSteampunk\UnknownSteampunk\Intermediate\Build\Win64\UE4Editor\Development\UnknownSteampunk\UnknownSteampunkGameMode.gen.cpp.obj"
+"C:\Users\ik760\Documents\GitHub\UnknownSteampunk\UnknownSteampunk\Intermediate\Build\Win64\UE4Editor\Development\UnknownSteampunk\Default.rc2.res"
+/OUT:"C:\Users\ik760\Documents\GitHub\UnknownSteampunk\UnknownSteampunk\Intermediate\Build\Win64\UE4Editor\Development\UnknownSteampunk\UE4Editor-UnknownSteampunk-9495.lib"

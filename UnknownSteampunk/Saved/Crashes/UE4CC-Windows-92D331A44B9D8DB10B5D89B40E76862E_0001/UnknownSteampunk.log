@@ -1,0 +1,690 @@
+Not using cached read wrapper
+Started task graph with 5 named threads and 23 total threads with 3 sets of task threads.
+Stats thread started at 0.314477
+ICU TimeZone Detection - Raw Offset: +3:00, Platform Override: ''
+Loading text-based GConfig....
+Mounting plugin MeshPainting
+Mounting plugin XGEController
+Mounting plugin Paper2D
+Mounting plugin LightPropagationVolume
+Mounting plugin LiveLink
+Mounting plugin CameraShakePreviewer
+Mounting plugin GameplayCameras
+Mounting plugin AssetManagerEditor
+Mounting plugin AnimationSharing
+Mounting plugin CryptoKeys
+Mounting plugin CLionSourceCodeAccess
+Mounting plugin CodeLiteSourceCodeAccess
+Mounting plugin GitSourceControl
+Mounting plugin KDevelopSourceCodeAccess
+Mounting plugin NullSourceCodeAccess
+Mounting plugin PerforceSourceControl
+Mounting plugin PixWinPlugin
+Mounting plugin PlasticSourceControl
+Mounting plugin PluginUtils
+Mounting plugin PropertyAccessNode
+Mounting plugin CurveEditorTools
+Mounting plugin RiderLink
+Mounting plugin DataValidation
+Mounting plugin SubversionSourceControl
+Mounting plugin TextureFormatOodle
+Mounting plugin FacialAnimation
+Mounting plugin UObjectPlugin
+Mounting plugin GameplayTagsEditor
+Mounting plugin GeometryMode
+Mounting plugin MacGraphicsSwitching
+Mounting plugin MaterialAnalyzer
+Mounting plugin RiderSourceCodeAccess
+Mounting plugin XCodeSourceCodeAccess
+Mounting plugin VisualStudioSourceCodeAccess
+Mounting plugin MobileLauncherProfileWizard
+Mounting plugin VisualStudioCodeSourceCodeAccess
+Mounting plugin PluginBrowser
+Mounting plugin SpeedTreeImporter
+Mounting plugin DatasmithContent
+Mounting plugin OodleData
+Mounting plugin VariantManagerContent
+Mounting plugin OodleNetwork
+Mounting plugin Niagara
+Mounting plugin ActorPalette
+Mounting plugin AlembicImporter
+Mounting plugin AutomationUtils
+Mounting plugin ChaosCloth
+Mounting plugin ChaosClothEditor
+Mounting plugin ChaosEditor
+Mounting plugin ChaosNiagara
+Mounting plugin ChaosSolverPlugin
+Mounting plugin CharacterAI
+Mounting plugin BackChannel
+Mounting plugin GeometryCollectionPlugin
+Mounting plugin GeometryCache
+Mounting plugin LuminPlatformFeatures
+Mounting plugin MagicLeap
+Mounting plugin AndroidMedia
+Mounting plugin AvfMedia
+Mounting plugin GeometryProcessing
+Mounting plugin MediaCompositing
+Mounting plugin ImgMedia
+Mounting plugin MediaPlayerEditor
+Mounting plugin MagicLeapLightEstimation
+Mounting plugin MagicLeapMedia
+Mounting plugin WebMMedia
+Mounting plugin WmfMedia
+Mounting plugin MotoSynth
+Mounting plugin MagicLeapPassableWorld
+Mounting plugin OpenImageDenoise
+Mounting plugin PlanarCut
+Mounting plugin MLSDK
+Mounting plugin ProxyLODPlugin
+Mounting plugin PythonScriptPlugin
+Mounting plugin SkeletalReduction
+Mounting plugin ActorSequence
+Mounting plugin LevelSequenceEditor
+Mounting plugin MatineeToLevelSequence
+Mounting plugin UdpMessaging
+Mounting plugin PlatformCrypto
+Mounting plugin TcpMessaging
+Mounting plugin TemplateSequence
+Mounting plugin OnlineSubsystem
+Mounting plugin OnlineSubsystemNull
+Mounting plugin OnlineSubsystemUtils
+Mounting plugin LauncherChunkInstaller
+Mounting plugin ScreenshotTools
+Mounting plugin ActorLayerUtilities
+Mounting plugin AndroidDeviceProfileSelector
+Mounting plugin AndroidPermission
+Mounting plugin AndroidMoviePlayer
+Mounting plugin AppleImageUtils
+Mounting plugin AppleMoviePlayer
+Mounting plugin ArchVisCharacter
+Mounting plugin AudioCapture
+Mounting plugin AssetTags
+Mounting plugin AudioSynesthesia
+Mounting plugin CableComponent
+Mounting plugin ChunkDownloader
+Mounting plugin CustomMeshComponent
+Mounting plugin EditableMesh
+Mounting plugin ExampleDeviceProfileSelector
+Mounting plugin GoogleCloudMessaging
+Mounting plugin GooglePAD
+Mounting plugin Takes
+Mounting plugin IOSDeviceProfileSelector
+Mounting plugin LinuxDeviceProfileSelector
+Mounting plugin LocationServicesBPLibrary
+Mounting plugin MobilePatchingUtils
+Mounting plugin OpenXR
+Mounting plugin OpenXREyeTracker
+Mounting plugin OpenXRHandTracking
+Mounting plugin PostSplashScreen
+Mounting plugin PhysXVehicles
+Mounting plugin RuntimePhysXCooking
+Mounting plugin SignificanceManager
+Mounting plugin ProceduralMeshComponent
+Mounting plugin SoundFields
+Mounting plugin PropertyAccessEditor
+Mounting plugin Synthesis
+Mounting plugin WebMMoviePlayer
+Mounting plugin WindowsMoviePlayer
+Mounting plugin AISupport
+Mounting plugin EnvironmentQueryEditor
+Mounting plugin ContentBrowserAssetDataSource
+Mounting plugin ContentBrowserClassDataSource
+Mounting plugin ContentBrowserFileDataSource
+Mounting plugin OnlineSubsystemGooglePlay
+Mounting plugin OnlineSubsystemIOS
+Mounting plugin OculusVR
+Mounting plugin SteamVR
+PIX capture plugin failed to initialize! Check that the process is launched from PIX.
+Using libcurl 7.55.1-DEV
+ - built for x86_64-pc-win32
+ - supports SSL with OpenSSL/1.1.1
+ - supports HTTP deflate (compression) using libz 1.2.8
+ - other features:
+     CURL_VERSION_SSL
+     CURL_VERSION_LIBZ
+     CURL_VERSION_IPV6
+     CURL_VERSION_ASYNCHDNS
+     CURL_VERSION_LARGEFILE
+     CURL_VERSION_IDN
+ CurlRequestOptions (configurable via config and command line):
+ - bVerifyPeer = true  - Libcurl will verify peer certificate
+ - bUseHttpProxy = false  - Libcurl will NOT use HTTP proxy
+ - bDontReuseConnections = false  - Libcurl will reuse connections
+ - MaxHostConnections = 16  - Libcurl will limit the number of connections to a host
+ - LocalHostAddr = Default
+ - BufferSize = 65536
+OSS: Creating online subsystem instance for: NULL
+WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
+OSS: TryLoadSubsystemAndSetDefault: Loaded subsystem for module [NULL]
+OculusPlugin initialized successfully
+Failed initializing OVRPlugin 1.59.0
+Build: ++UE4+Release-4.27-CL-17735300
+Engine Version: 4.27.1-17735300+++UE4+Release-4.27
+Compatible Engine Version: 4.27.0-17155196+++UE4+Release-4.27
+Net CL: 17155196
+OS: Windows 10 (Release 2004) (), CPU: Intel(R) Core(TM) i5-8265U CPU @ 1.60GHz, GPU: Intel(R) UHD Graphics 620
+Compiled (64-bit): Oct  6 2021 14:42:51
+Compiled with Visual C++: 19.24.28315.00
+Build Configuration: Development
+Branch Name: ++UE4+Release-4.27
+Command Line:  -skipcompile
+Base Directory: C:/Program Files/Epic Games/UE_4.27/Engine/Binaries/Win64/
+Allocator: TBB
+Installed Engine Build: 1
+Number of dev versions registered: 29
+  Dev-Blueprints (B0D832E4-1F89-4F0D-ACCF-7EB736FD4AA2): 10
+  Dev-Build (E1C64328-A22C-4D53-A36C-8E866417BD8C): 0
+  Dev-Core (375EC13C-06E4-48FB-B500-84F0262A717E): 4
+  Dev-Editor (E4B068ED-F494-42E9-A231-DA0B2E46BB41): 40
+  Dev-Framework (CFFC743F-43B0-4480-9391-14DF171D2073): 37
+  Dev-Mobile (B02B49B5-BB20-44E9-A304-32B752E40360): 3
+  Dev-Networking (A4E4105C-59A1-49B5-A7C5-40C4547EDFEE): 0
+  Dev-Online (39C831C9-5AE6-47DC-9A44-9C173E1C8E7C): 0
+  Dev-Physics (78F01B33-EBEA-4F98-B9B4-84EACCB95AA2): 14
+  Dev-Platform (6631380F-2D4D-43E0-8009-CF276956A95A): 0
+  Dev-Rendering (12F88B9F-8875-4AFC-A67C-D90C383ABD29): 45
+  Dev-Sequencer (7B5AE74C-D270-4C10-A958-57980B212A5A): 13
+  Dev-VR (D7296918-1DD6-4BDD-9DE2-64A83CC13884): 3
+  Dev-LoadTimes (C2A15278-BFE7-4AFE-6C17-90FF531DF755): 1
+  Private-Geometry (6EACA3D4-40EC-4CC1-B786-8BED09428FC5): 3
+  Dev-AnimPhys (29E575DD-E0A3-4627-9D10-D276232CDCEA): 17
+  Dev-Anim (AF43A65D-7FD3-4947-9873-3E8ED9C1BB05): 15
+  Dev-ReflectionCapture (6B266CEC-1EC7-4B8F-A30B-E4D90942FC07): 1
+  Dev-Automation (0DF73D61-A23F-47EA-B727-89E90C41499A): 1
+  FortniteMain (601D1886-AC64-4F84-AA16-D3DE0DEAC7D6): 47
+  FortniteRelease (E7086368-6B23-4C58-8439-1B7016265E91): 1
+  Dev-Enterprise (9DFFBCD6-494F-0158-E221-12823C92A888): 10
+  Dev-Niagara (F2AED0AC-9AFE-416F-8664-AA7FFA26D6FC): 1
+  Dev-Destruction (174F1F0B-B4C6-45A5-B13F-2EE8D0FB917D): 10
+  Dev-Physics-Ext (35F94A83-E258-406C-A318-09F59610247C): 41
+  Dev-PhysicsMaterial-Chaos (B68FC16E-8B1B-42E2-B453-215C058844FE): 1
+  Dev-CineCamera (B2E18506-4273-CFC2-A54E-F4BB758BBA07): 1
+  Dev-VirtualProduction (64F58936-FD1B-42BA-BA96-7289D5D0FA4E): 1
+  Dev-MediaFramework (6F0ED827-A609-4895-9C91-998D90180EA4): 2
+Presizing for max 25165824 objects, including 0 objects not considered by GC, pre-allocating 0 bytes for permanent pool.
+Applying CVar settings from Section [/Script/Engine.StreamingSettings] File [C:/Users/ik760/Documents/GitHub/UnknownSteampunk/UnknownSteampunk/Saved/Config/Windows/Engine.ini]
+Setting CVar [[s.MinBulkDataSizeForAsyncLoading:131072]]
+Setting CVar [[s.AsyncLoadingThreadEnabled:0]]
+Setting CVar [[s.EventDrivenLoaderEnabled:1]]
+Setting CVar [[s.WarnIfTimeLimitExceeded:0]]
+Setting CVar [[s.TimeLimitExceededMultiplier:1.5]]
+Setting CVar [[s.TimeLimitExceededMinTime:0.005]]
+Setting CVar [[s.UseBackgroundLevelStreaming:1]]
+Setting CVar [[s.PriorityAsyncLoadingExtraTime:15.0]]
+Setting CVar [[s.LevelStreamingActorsUpdateTimeLimit:5.0]]
+Setting CVar [[s.PriorityLevelStreamingActorsUpdateExtraTime:5.0]]
+Setting CVar [[s.LevelStreamingComponentsRegistrationGranularity:10]]
+Setting CVar [[s.UnregisterComponentsTimeLimit:1.0]]
+Setting CVar [[s.LevelStreamingComponentsUnregistrationGranularity:5]]
+Setting CVar [[s.FlushStreamingOnExit:1]]
+Object subsystem initialized
+Setting CVar [[con.DebugEarlyDefault:1]]
+Setting CVar [[r.setres:1280x720]]
+Setting CVar [[r.VSync:0]]
+Setting CVar [[r.RHICmdBypass:0]]
+Applying CVar settings from Section [/Script/Engine.RendererSettings] File [C:/Users/ik760/Documents/GitHub/UnknownSteampunk/UnknownSteampunk/Saved/Config/Windows/Engine.ini]
+Setting CVar [[r.GPUCrashDebugging:0]]
+Applying CVar settings from Section [/Script/Engine.RendererOverrideSettings] File [C:/Users/ik760/Documents/GitHub/UnknownSteampunk/UnknownSteampunk/Saved/Config/Windows/Engine.ini]
+Applying CVar settings from Section [/Script/Engine.StreamingSettings] File [C:/Users/ik760/Documents/GitHub/UnknownSteampunk/UnknownSteampunk/Saved/Config/Windows/Engine.ini]
+Setting CVar [[s.MinBulkDataSizeForAsyncLoading:131072]]
+Setting CVar [[s.AsyncLoadingThreadEnabled:0]]
+Setting CVar [[s.EventDrivenLoaderEnabled:1]]
+Setting CVar [[s.WarnIfTimeLimitExceeded:0]]
+Setting CVar [[s.TimeLimitExceededMultiplier:1.5]]
+Setting CVar [[s.TimeLimitExceededMinTime:0.005]]
+Setting CVar [[s.UseBackgroundLevelStreaming:1]]
+Setting CVar [[s.PriorityAsyncLoadingExtraTime:15.0]]
+Setting CVar [[s.LevelStreamingActorsUpdateTimeLimit:5.0]]
+Setting CVar [[s.PriorityLevelStreamingActorsUpdateExtraTime:5.0]]
+Setting CVar [[s.LevelStreamingComponentsRegistrationGranularity:10]]
+Setting CVar [[s.UnregisterComponentsTimeLimit:1.0]]
+Setting CVar [[s.LevelStreamingComponentsUnregistrationGranularity:5]]
+Setting CVar [[s.FlushStreamingOnExit:1]]
+Applying CVar settings from Section [/Script/Engine.GarbageCollectionSettings] File [C:/Users/ik760/Documents/GitHub/UnknownSteampunk/UnknownSteampunk/Saved/Config/Windows/Engine.ini]
+Setting CVar [[gc.MaxObjectsNotConsideredByGC:1]]
+Setting CVar [[gc.SizeOfPermanentObjectPool:0]]
+Setting CVar [[gc.FlushStreamingOnGC:0]]
+Setting CVar [[gc.NumRetriesBeforeForcingGC:10]]
+Setting CVar [[gc.AllowParallelGC:1]]
+Setting CVar [[gc.TimeBetweenPurgingPendingKillObjects:61.1]]
+Setting CVar [[gc.MaxObjectsInEditor:25165824]]
+Setting CVar [[gc.IncrementalBeginDestroyEnabled:1]]
+Setting CVar [[gc.CreateGCClusters:1]]
+Setting CVar [[gc.MinGCClusterSize:5]]
+Setting CVar [[gc.ActorClusteringEnabled:0]]
+Setting CVar [[gc.BlueprintClusteringEnabled:0]]
+Setting CVar [[gc.UseDisregardForGCOnDedicatedServers:0]]
+Setting CVar [[gc.MultithreadedDestructionEnabled:1]]
+Applying CVar settings from Section [/Script/Engine.NetworkSettings] File [C:/Users/ik760/Documents/GitHub/UnknownSteampunk/UnknownSteampunk/Saved/Config/Windows/Engine.ini]
+Applying CVar settings from Section [/Script/UnrealEd.CookerSettings] File [C:/Users/ik760/Documents/GitHub/UnknownSteampunk/UnknownSteampunk/Saved/Config/Windows/Engine.ini]
+Applying CVar settings from Section [ViewDistanceQuality@3] File [C:/Users/ik760/Documents/GitHub/UnknownSteampunk/UnknownSteampunk/Saved/Config/Windows/Scalability.ini]
+Setting CVar [[r.SkeletalMeshLODBias:0]]
+Setting CVar [[r.ViewDistanceScale:1.0]]
+Applying CVar settings from Section [AntiAliasingQuality@3] File [C:/Users/ik760/Documents/GitHub/UnknownSteampunk/UnknownSteampunk/Saved/Config/Windows/Scalability.ini]
+Setting CVar [[r.PostProcessAAQuality:4]]
+Applying CVar settings from Section [ShadowQuality@3] File [C:/Users/ik760/Documents/GitHub/UnknownSteampunk/UnknownSteampunk/Saved/Config/Windows/Scalability.ini]
+Setting CVar [[r.LightFunctionQuality:1]]
+Setting CVar [[r.ShadowQuality:5]]
+Setting CVar [[r.Shadow.CSM.MaxCascades:10]]
+Setting CVar [[r.Shadow.MaxResolution:2048]]
+Setting CVar [[r.Shadow.MaxCSMResolution:2048]]
+Setting CVar [[r.Shadow.RadiusThreshold:0.01]]
+Setting CVar [[r.Shadow.DistanceScale:1.0]]
+Setting CVar [[r.Shadow.CSM.TransitionScale:1.0]]
+Setting CVar [[r.Shadow.PreShadowResolutionFactor:1.0]]
+Setting CVar [[r.DistanceFieldShadowing:1]]
+Setting CVar [[r.DistanceFieldAO:1]]
+Setting CVar [[r.AOQuality:2]]
+Setting CVar [[r.VolumetricFog:1]]
+Setting CVar [[r.VolumetricFog.GridPixelSize:8]]
+Setting CVar [[r.VolumetricFog.GridSizeZ:128]]
+Setting CVar [[r.VolumetricFog.HistoryMissSupersampleCount:4]]
+Setting CVar [[r.LightMaxDrawDistanceScale:1]]
+Setting CVar [[r.CapsuleShadows:1]]
+Applying CVar settings from Section [PostProcessQuality@3] File [C:/Users/ik760/Documents/GitHub/UnknownSteampunk/UnknownSteampunk/Saved/Config/Windows/Scalability.ini]
+Setting CVar [[r.MotionBlurQuality:4]]
+Setting CVar [[r.AmbientOcclusionMipLevelFactor:0.4]]
+Setting CVar [[r.AmbientOcclusionMaxQuality:100]]
+Setting CVar [[r.AmbientOcclusionLevels:-1]]
+Setting CVar [[r.AmbientOcclusionRadiusScale:1.0]]
+Setting CVar [[r.DepthOfFieldQuality:2]]
+Setting CVar [[r.RenderTargetPoolMin:400]]
+Setting CVar [[r.LensFlareQuality:2]]
+Setting CVar [[r.SceneColorFringeQuality:1]]
+Setting CVar [[r.EyeAdaptationQuality:2]]
+Setting CVar [[r.BloomQuality:5]]
+Setting CVar [[r.FastBlurThreshold:100]]
+Setting CVar [[r.Upscale.Quality:3]]
+Setting CVar [[r.Tonemapper.GrainQuantization:1]]
+Setting CVar [[r.LightShaftQuality:1]]
+Setting CVar [[r.Filter.SizeScale:1]]
+Setting CVar [[r.Tonemapper.Quality:5]]
+Setting CVar [[r.DOF.Gather.AccumulatorQuality:1        ; higher gathering accumulator quality]]
+Setting CVar [[r.DOF.Gather.PostfilterMethod:1          ; Median3x3 postfilering method]]
+Setting CVar [[r.DOF.Gather.EnableBokehSettings:0       ; no bokeh simulation when gathering]]
+Setting CVar [[r.DOF.Gather.RingCount:4                 ; medium number of samples when gathering]]
+Setting CVar [[r.DOF.Scatter.ForegroundCompositing:1    ; additive foreground scattering]]
+Setting CVar [[r.DOF.Scatter.BackgroundCompositing:2    ; additive background scattering]]
+Setting CVar [[r.DOF.Scatter.EnableBokehSettings:1      ; bokeh simulation when scattering]]
+Setting CVar [[r.DOF.Scatter.MaxSpriteRatio:0.1         ; only a maximum of 10% of scattered bokeh]]
+Setting CVar [[r.DOF.Recombine.Quality:1                ; cheap slight out of focus]]
+Setting CVar [[r.DOF.Recombine.EnableBokehSettings:0    ; no bokeh simulation on slight out of focus]]
+Setting CVar [[r.DOF.TemporalAAQuality:1                ; more stable temporal accumulation]]
+Setting CVar [[r.DOF.Kernel.MaxForegroundRadius:0.025]]
+Setting CVar [[r.DOF.Kernel.MaxBackgroundRadius:0.025]]
+Applying CVar settings from Section [TextureQuality@3] File [C:/Users/ik760/Documents/GitHub/UnknownSteampunk/UnknownSteampunk/Saved/Config/Windows/Scalability.ini]
+Setting CVar [[r.Streaming.MipBias:0]]
+Setting CVar [[r.Streaming.AmortizeCPUToGPUCopy:0]]
+Setting CVar [[r.Streaming.MaxNumTexturesToStreamPerFrame:0]]
+Setting CVar [[r.Streaming.Boost:1]]
+Setting CVar [[r.MaxAnisotropy:8]]
+Setting CVar [[r.VT.MaxAnisotropy:8]]
+Setting CVar [[r.Streaming.LimitPoolSizeToVRAM:0]]
+Setting CVar [[r.Streaming.PoolSize:1000]]
+Setting CVar [[r.Streaming.MaxEffectiveScreenSize:0]]
+Applying CVar settings from Section [EffectsQuality@3] File [C:/Users/ik760/Documents/GitHub/UnknownSteampunk/UnknownSteampunk/Saved/Config/Windows/Scalability.ini]
+Setting CVar [[r.TranslucencyLightingVolumeDim:64]]
+Setting CVar [[r.RefractionQuality:2]]
+Setting CVar [[r.SSR.Quality:3]]
+Setting CVar [[r.SSR.HalfResSceneColor:0]]
+Setting CVar [[r.SceneColorFormat:4]]
+Setting CVar [[r.DetailMode:2]]
+Setting CVar [[r.TranslucencyVolumeBlur:1]]
+Setting CVar [[r.MaterialQualityLevel:1 ; High quality]]
+Setting CVar [[r.AnisotropicMaterials:1]]
+Setting CVar [[r.SSS.Scale:1]]
+Setting CVar [[r.SSS.SampleSet:2]]
+Setting CVar [[r.SSS.Quality:1]]
+Setting CVar [[r.SSS.HalfRes:0]]
+Setting CVar [[r.SSGI.Quality:3]]
+Setting CVar [[r.EmitterSpawnRateScale:1.0]]
+Setting CVar [[r.ParticleLightQuality:2]]
+Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.FastApplyOnOpaque:1 ; Always have FastSkyLUT 1 in this case to avoid wrong sky]]
+Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.SampleCountMaxPerSlice:4]]
+Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.DepthResolution:16.0]]
+Setting CVar [[r.SkyAtmosphere.FastSkyLUT:1]]
+Setting CVar [[r.SkyAtmosphere.FastSkyLUT.SampleCountMin:4.0]]
+Setting CVar [[r.SkyAtmosphere.FastSkyLUT.SampleCountMax:128.0]]
+Setting CVar [[r.SkyAtmosphere.SampleCountMin:4.0]]
+Setting CVar [[r.SkyAtmosphere.SampleCountMax:128.0]]
+Setting CVar [[r.SkyAtmosphere.TransmittanceLUT.UseSmallFormat:0]]
+Setting CVar [[r.SkyAtmosphere.TransmittanceLUT.SampleCount:10.0]]
+Setting CVar [[r.SkyAtmosphere.MultiScatteringLUT.SampleCount:15.0]]
+Setting CVar [[r.SkyLight.RealTimeReflectionCapture:1]]
+Applying CVar settings from Section [FoliageQuality@3] File [C:/Users/ik760/Documents/GitHub/UnknownSteampunk/UnknownSteampunk/Saved/Config/Windows/Scalability.ini]
+Setting CVar [[foliage.DensityScale:1.0]]
+Setting CVar [[grass.DensityScale:1.0]]
+Applying CVar settings from Section [ShadingQuality@3] File [C:/Users/ik760/Documents/GitHub/UnknownSteampunk/UnknownSteampunk/Saved/Config/Windows/Scalability.ini]
+Setting CVar [[r.HairStrands.SkyLighting.IntegrationType:2]]
+Setting CVar [[r.HairStrands.SkyAO.SampleCount:4]]
+Setting CVar [[r.HairStrands.Visibility.MSAA.SamplePerPixel:4]]
+Selected Device Profile: [Windows]
+Applying CVar settings loaded from the selected device profile: [Windows]
+Platform has ~ 8 GB [8471658496 / 8589934592 / 8], which maps to Default [LargestMinGB=32, LargerMinGB=12, DefaultMinGB=8, SmallerMinGB=6, SmallestMinGB=0)
+Going up to parent DeviceProfile []
+Applying CVar settings from Section [ViewDistanceQuality@3] File [C:/Users/ik760/Documents/GitHub/UnknownSteampunk/UnknownSteampunk/Saved/Config/Windows/Scalability.ini]
+Setting CVar [[r.SkeletalMeshLODBias:0]]
+Setting CVar [[r.ViewDistanceScale:1.0]]
+Applying CVar settings from Section [AntiAliasingQuality@3] File [C:/Users/ik760/Documents/GitHub/UnknownSteampunk/UnknownSteampunk/Saved/Config/Windows/Scalability.ini]
+Setting CVar [[r.PostProcessAAQuality:4]]
+Applying CVar settings from Section [ShadowQuality@3] File [C:/Users/ik760/Documents/GitHub/UnknownSteampunk/UnknownSteampunk/Saved/Config/Windows/Scalability.ini]
+Setting CVar [[r.LightFunctionQuality:1]]
+Setting CVar [[r.ShadowQuality:5]]
+Setting CVar [[r.Shadow.CSM.MaxCascades:10]]
+Setting CVar [[r.Shadow.MaxResolution:2048]]
+Setting CVar [[r.Shadow.MaxCSMResolution:2048]]
+Setting CVar [[r.Shadow.RadiusThreshold:0.01]]
+Setting CVar [[r.Shadow.DistanceScale:1.0]]
+Setting CVar [[r.Shadow.CSM.TransitionScale:1.0]]
+Setting CVar [[r.Shadow.PreShadowResolutionFactor:1.0]]
+Setting CVar [[r.DistanceFieldShadowing:1]]
+Setting CVar [[r.DistanceFieldAO:1]]
+Setting CVar [[r.AOQuality:2]]
+Setting CVar [[r.VolumetricFog:1]]
+Setting CVar [[r.VolumetricFog.GridPixelSize:8]]
+Setting CVar [[r.VolumetricFog.GridSizeZ:128]]
+Setting CVar [[r.VolumetricFog.HistoryMissSupersampleCount:4]]
+Setting CVar [[r.LightMaxDrawDistanceScale:1]]
+Setting CVar [[r.CapsuleShadows:1]]
+Applying CVar settings from Section [PostProcessQuality@3] File [C:/Users/ik760/Documents/GitHub/UnknownSteampunk/UnknownSteampunk/Saved/Config/Windows/Scalability.ini]
+Setting CVar [[r.MotionBlurQuality:4]]
+Setting CVar [[r.AmbientOcclusionMipLevelFactor:0.4]]
+Setting CVar [[r.AmbientOcclusionMaxQuality:100]]
+Setting CVar [[r.AmbientOcclusionLevels:-1]]
+Setting CVar [[r.AmbientOcclusionRadiusScale:1.0]]
+Setting CVar [[r.DepthOfFieldQuality:2]]
+Setting CVar [[r.RenderTargetPoolMin:400]]
+Setting CVar [[r.LensFlareQuality:2]]
+Setting CVar [[r.SceneColorFringeQuality:1]]
+Setting CVar [[r.EyeAdaptationQuality:2]]
+Setting CVar [[r.BloomQuality:5]]
+Setting CVar [[r.FastBlurThreshold:100]]
+Setting CVar [[r.Upscale.Quality:3]]
+Setting CVar [[r.Tonemapper.GrainQuantization:1]]
+Setting CVar [[r.LightShaftQuality:1]]
+Setting CVar [[r.Filter.SizeScale:1]]
+Setting CVar [[r.Tonemapper.Quality:5]]
+Setting CVar [[r.DOF.Gather.AccumulatorQuality:1        ; higher gathering accumulator quality]]
+Setting CVar [[r.DOF.Gather.PostfilterMethod:1          ; Median3x3 postfilering method]]
+Setting CVar [[r.DOF.Gather.EnableBokehSettings:0       ; no bokeh simulation when gathering]]
+Setting CVar [[r.DOF.Gather.RingCount:4                 ; medium number of samples when gathering]]
+Setting CVar [[r.DOF.Scatter.ForegroundCompositing:1    ; additive foreground scattering]]
+Setting CVar [[r.DOF.Scatter.BackgroundCompositing:2    ; additive background scattering]]
+Setting CVar [[r.DOF.Scatter.EnableBokehSettings:1      ; bokeh simulation when scattering]]
+Setting CVar [[r.DOF.Scatter.MaxSpriteRatio:0.1         ; only a maximum of 10% of scattered bokeh]]
+Setting CVar [[r.DOF.Recombine.Quality:1                ; cheap slight out of focus]]
+Setting CVar [[r.DOF.Recombine.EnableBokehSettings:0    ; no bokeh simulation on slight out of focus]]
+Setting CVar [[r.DOF.TemporalAAQuality:1                ; more stable temporal accumulation]]
+Setting CVar [[r.DOF.Kernel.MaxForegroundRadius:0.025]]
+Setting CVar [[r.DOF.Kernel.MaxBackgroundRadius:0.025]]
+Applying CVar settings from Section [TextureQuality@3] File [C:/Users/ik760/Documents/GitHub/UnknownSteampunk/UnknownSteampunk/Saved/Config/Windows/Scalability.ini]
+Setting CVar [[r.Streaming.MipBias:0]]
+Setting CVar [[r.Streaming.AmortizeCPUToGPUCopy:0]]
+Setting CVar [[r.Streaming.MaxNumTexturesToStreamPerFrame:0]]
+Setting CVar [[r.Streaming.Boost:1]]
+Setting CVar [[r.MaxAnisotropy:8]]
+Setting CVar [[r.VT.MaxAnisotropy:8]]
+Setting CVar [[r.Streaming.LimitPoolSizeToVRAM:0]]
+Setting CVar [[r.Streaming.PoolSize:1000]]
+Setting CVar [[r.Streaming.MaxEffectiveScreenSize:0]]
+Applying CVar settings from Section [EffectsQuality@3] File [C:/Users/ik760/Documents/GitHub/UnknownSteampunk/UnknownSteampunk/Saved/Config/Windows/Scalability.ini]
+Setting CVar [[r.TranslucencyLightingVolumeDim:64]]
+Setting CVar [[r.RefractionQuality:2]]
+Setting CVar [[r.SSR.Quality:3]]
+Setting CVar [[r.SSR.HalfResSceneColor:0]]
+Setting CVar [[r.SceneColorFormat:4]]
+Setting CVar [[r.DetailMode:2]]
+Setting CVar [[r.TranslucencyVolumeBlur:1]]
+Setting CVar [[r.MaterialQualityLevel:1 ; High quality]]
+Setting CVar [[r.AnisotropicMaterials:1]]
+Setting CVar [[r.SSS.Scale:1]]
+Setting CVar [[r.SSS.SampleSet:2]]
+Setting CVar [[r.SSS.Quality:1]]
+Setting CVar [[r.SSS.HalfRes:0]]
+Setting CVar [[r.SSGI.Quality:3]]
+Setting CVar [[r.EmitterSpawnRateScale:1.0]]
+Setting CVar [[r.ParticleLightQuality:2]]
+Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.FastApplyOnOpaque:1 ; Always have FastSkyLUT 1 in this case to avoid wrong sky]]
+Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.SampleCountMaxPerSlice:4]]
+Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.DepthResolution:16.0]]
+Setting CVar [[r.SkyAtmosphere.FastSkyLUT:1]]
+Setting CVar [[r.SkyAtmosphere.FastSkyLUT.SampleCountMin:4.0]]
+Setting CVar [[r.SkyAtmosphere.FastSkyLUT.SampleCountMax:128.0]]
+Setting CVar [[r.SkyAtmosphere.SampleCountMin:4.0]]
+Setting CVar [[r.SkyAtmosphere.SampleCountMax:128.0]]
+Setting CVar [[r.SkyAtmosphere.TransmittanceLUT.UseSmallFormat:0]]
+Setting CVar [[r.SkyAtmosphere.TransmittanceLUT.SampleCount:10.0]]
+Setting CVar [[r.SkyAtmosphere.MultiScatteringLUT.SampleCount:15.0]]
+Setting CVar [[r.SkyLight.RealTimeReflectionCapture:1]]
+Applying CVar settings from Section [FoliageQuality@3] File [C:/Users/ik760/Documents/GitHub/UnknownSteampunk/UnknownSteampunk/Saved/Config/Windows/Scalability.ini]
+Setting CVar [[foliage.DensityScale:1.0]]
+Setting CVar [[grass.DensityScale:1.0]]
+Applying CVar settings from Section [ShadingQuality@3] File [C:/Users/ik760/Documents/GitHub/UnknownSteampunk/UnknownSteampunk/Saved/Config/Windows/Scalability.ini]
+Setting CVar [[r.HairStrands.SkyLighting.IntegrationType:2]]
+Setting CVar [[r.HairStrands.SkyAO.SampleCount:4]]
+Setting CVar [[r.HairStrands.Visibility.MSAA.SamplePerPixel:4]]
+Applying CVar settings from Section [Startup] File [../../../Engine/Config/ConsoleVariables.ini]
+Setting CVar [[net.UseAdaptiveNetUpdateFrequency:0]]
+Setting CVar [[p.chaos.AllowCreatePhysxBodies:1]]
+Setting CVar [[fx.SkipVectorVMBackendOptimizations:1]]
+Applying CVar settings from Section [ConsoleVariables] File [C:/Users/ik760/Documents/GitHub/UnknownSteampunk/UnknownSteampunk/Saved/Config/Windows/Engine.ini]
+Applying CVar settings from Section [ConsoleVariables] File [C:/Users/ik760/Documents/GitHub/UnknownSteampunk/UnknownSteampunk/Saved/Config/Windows/Editor.ini]
+Computer: DESKTOP-GGN94JM
+User: ik760
+CPU Page size=4096, Cores=4
+High frequency timer resolution =10.000000 MHz
+Memory total: Physical=7.9GB (8GB approx)
+Platform Memory Stats for Windows
+Process Physical Memory: 141.20 MB used, 141.20 MB peak
+Process Virtual Memory: 112.57 MB used, 112.57 MB peak
+Physical Memory: 6519.87 MB used,  1559.34 MB free, 8079.20 MB total
+Virtual Memory: 134199552.00 MB used,  18173.01 MB free, 134217728.00 MB total
+WindowsPlatformFeatures enabled
+Physics initialised using underlying interface: PhysX
+Using OS detected language (ru-RU).
+Using OS detected locale (ru-RU).
+No specific localization for 'ru-RU' exists, so the 'ru' localization will be used.
+LocRes '../../../Engine/Content/Localization/Editor/ru/Editor.locres' could not be opened for reading!
+LocRes '../../../Engine/Content/Localization/EditorTutorials/ru/EditorTutorials.locres' could not be opened for reading!
+LocRes '../../../Engine/Content/Localization/Keywords/ru/Keywords.locres' could not be opened for reading!
+LocRes '../../../Engine/Content/Localization/Category/ru/Category.locres' could not be opened for reading!
+LocRes '../../../Engine/Content/Localization/ToolTips/ru/ToolTips.locres' could not be opened for reading!
+LocRes '../../../Engine/Content/Localization/PropertyNames/ru/PropertyNames.locres' could not be opened for reading!
+LocRes '../../../Engine/Content/Localization/Engine/ru/Engine.locres' could not be opened for reading!
+Setting process to per monitor DPI aware
+IME system deactivated.
+New Slate User Created.  User Index 0, Is Virtual User: 0
+Slate User Registered.  User Index 0, Is Virtual User: 0
+Loaded GFSDK_Aftermath_Lib.x64.dll
+Failed to initialize OpenVR with code 110
+D3D11 min allowed feature level: 11_0
+D3D11 max allowed feature level: 11_0
+D3D11 adapters:
+   0. 'Intel(R) UHD Graphics 620' (Feature Level 11_0)
+      128/0/4039 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:1, VendorId:0x8086
+   1. 'Microsoft Basic Render Driver' (Feature Level 11_0)
+      0/0/4039 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:0, VendorId:0x1414
+Chosen D3D11 Adapter:
+    Description : Intel(R) UHD Graphics 620
+    VendorId    : 8086
+    DeviceId    : 3ea0
+    SubSysId    : 84c5103c
+    Revision    : 0000
+    DedicatedVideoMemory : 134217728 bytes
+    DedicatedSystemMemory : 0 bytes
+    SharedSystemMemory : 4235829248 bytes
+    AdapterLuid : 0 80722
+Creating new Direct3DDevice
+    GPU DeviceId: 0x3ea0 (for the marketing name, search the web for "GPU Device Id")
+EnumDisplayDevices:
+   0. 'Intel(R) UHD Graphics 620' (P:1 D:1)
+   1. 'Intel(R) UHD Graphics 620' (P:0 D:0)
+   2. 'Intel(R) UHD Graphics 620' (P:0 D:0)
+DebugString: FoundDriverCount:3 
+    Adapter Name: Intel(R) UHD Graphics 620
+  Driver Version: 26.20.100.7926 (internal:26.20.100.7926, unified:26.20.100.7926)
+     Driver Date: 2-25-2020
+Texture pool is 1503 MB (70% of 2147 MB)
+Creating D3DDevice using adapter:
+    Description : Intel(R) UHD Graphics 620
+    VendorId    : 8086
+    DeviceId    : 3ea0
+    SubSysId    : 84c5103c
+    Revision    : 0000
+    DedicatedVideoMemory : 134217728 bytes
+    DedicatedSystemMemory : 0 bytes
+    SharedSystemMemory : 4235829248 bytes
+    AdapterLuid : 0 80722
+RHI does not have support for 64 bit atomics
+Intel Extensions support version Full=16777216, Major=1, Minor=0, Revision=0
+Intel Extensions support version Full=16777217, Major=1, Minor=0, Revision=1
+Intel Extensions Framework enabled
+[IntelMetricsDiscovery] Started
+Async texture creation enabled
+Array index from any shader is supported
+GPU Timing Frequency: 12.000048 (Debug: 2 0)
+Loaded TargetPlatform 'AllDesktop'
+Loaded TargetPlatform 'Android'
+Loaded TargetPlatform 'Android_ASTC'
+Loaded TargetPlatform 'Android_DXT'
+Loaded TargetPlatform 'Android_ETC2'
+Loaded TargetPlatform 'AndroidClient'
+Loaded TargetPlatform 'Android_ASTCClient'
+Loaded TargetPlatform 'Android_DXTClient'
+Loaded TargetPlatform 'Android_ETC2Client'
+Loaded TargetPlatform 'Android_Multi'
+Loaded TargetPlatform 'Android_MultiClient'
+Loaded TargetPlatform 'IOSClient'
+Loaded TargetPlatform 'IOS'
+Loaded TargetPlatform 'Linux'
+Loaded TargetPlatform 'LinuxNoEditor'
+Loaded TargetPlatform 'LinuxClient'
+Loaded TargetPlatform 'LinuxServer'
+Loaded TargetPlatform 'LinuxAArch64NoEditor'
+Loaded TargetPlatform 'LinuxAArch64Client'
+Loaded TargetPlatform 'LinuxAArch64Server'
+Loaded TargetPlatform 'Lumin'
+Loaded TargetPlatform 'LuminClient'
+Loaded TargetPlatform 'MacNoEditor'
+Loaded TargetPlatform 'Mac'
+Loaded TargetPlatform 'MacClient'
+Loaded TargetPlatform 'MacServer'
+Loaded TargetPlatform 'TVOSClient'
+Loaded TargetPlatform 'TVOS'
+Loaded TargetPlatform 'WindowsNoEditor'
+Loaded TargetPlatform 'Windows'
+Loaded TargetPlatform 'WindowsClient'
+Loaded TargetPlatform 'WindowsServer'
+Building Assets For Windows
+Lib vorbis DLL was dynamically loaded.
+Oodle Texture 2.9.0 init RDO Off
+Ray tracing is disabled. Reason: r.RayTracing=0.
+Guid format shader working directory is -35 characters bigger than the processId version (../../../../../../Users/ik760/Documents/GitHub/UnknownSteampunk/UnknownSteampunk/Intermediate/Shaders/WorkingDirectory/26040/).
+Cleaned the shader compiler working directory 'C:/Users/ik760/AppData/Local/Temp/UnrealShaderWorkingDir/B1F161E24E454D15EE02E390FD14EB76/'.
+Cannot use XGE Controller as Incredibuild is not installed on this machine.
+Cannot use XGE Shader Compiler as Incredibuild is not installed on this machine.
+Using Local Shader Compiler.
+Max Cache Size: 512 MB
+Loaded boot cache 0.13s 103MB C:/Users/ik760/AppData/Local/UnrealEngine/4.27/DerivedDataCache/Boot.ddc.
+Loaded Boot cache: C:/Users/ik760/AppData/Local/UnrealEngine/4.27/DerivedDataCache/Boot.ddc
+FDerivedDataBackendGraph:  Pak pak cache file ../../../../../../Users/ik760/Documents/GitHub/UnknownSteampunk/UnknownSteampunk/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
+Unable to find inner node Pak for hierarchical cache Hierarchy.
+FDerivedDataBackendGraph:  CompressedPak pak cache file ../../../../../../Users/ik760/Documents/GitHub/UnknownSteampunk/UnknownSteampunk/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+Unable to find inner node CompressedPak for hierarchical cache Hierarchy.
+Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
+FDerivedDataBackendGraph:  EnterprisePak pak cache file ../../../Enterprise/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+Unable to find inner node EnterprisePak for hierarchical cache Hierarchy.
+Speed tests for C:/Users/ik760/AppData/Local/UnrealEngine/Common/DerivedDataCache took 0.02 seconds
+Performance to C:/Users/ik760/AppData/Local/UnrealEngine/Common/DerivedDataCache: Latency=0.22ms. RandomReadSpeed=217.01MBs, RandomWriteSpeed=71.97MBs. Assigned SpeedClass 'Local'
+Using Local data cache path C:/Users/ik760/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
+Shared data cache path not found in *engine.ini, will not use an Shared cache.
+Unable to find inner node Shared for hierarchical cache Hierarchy.
+Using FreeType 2.10.0
+SlateFontServices - WITH_FREETYPE: 1, WITH_HARFBUZZ: 1
+FAssetRegistry took 0.0033 seconds to start up
+Selected Device Profile: [Windows]
+Active device profile: [000002090267D100][000002097FC38CC0 49] Windows
+Profiles: [000002090267D100][000002097FC38CC0 49] Windows, [0000020902646700][000002090230CE40 49] WindowsNoEditor, [000002090267E200][0000020902310FC0 49] WindowsServer, [0000020902645900][0000020902315140 49] WindowsClient, [000002090267D700][00000209023192C0 49] IOS, [0000020902646900][000002090231D440 49] iPadAir, [000002090267FC00][00000209023215C0 49] iPadAir2, [00000209025FD400][0000020902329880 49] IPadPro, [00000209025FD500][00000209023258C0 49] iPadAir3, [0000020902647A00][000002090232DA40 49] iPadAir4, [00000209025FE300][0000020902331BC0 49] iPadMini2, [0000020902647100][00000209023341C0 49] iPadMini3, [00000209025FEF00][0000020902338340 49] iPadMini4, [0000020902645E00][000002090233C4C0 49] iPadMini5, [0000020902639000][0000020902344780 49] iPhone6, [0000020902639100][00000209023407C0 49] iPodTouch6, [000002090267F900][000002090234CA80 49] iPhone7, [000002090267E900][0000020902348AC0 49] iPodTouch7, [00000209025FD000][000002097FC3CC00 49] iPhone5S, [000002090267EF00][0000020902350D40 49] iPhone6Plus, [00000209025FF600][0000020902354E80 49] iPhone6S, [000002090267CC00][0000020902358FC0 49] iPhone6SPlus, [000002090267DD00][0000020902361140 49] iPhone7Plus, [0000020902638800][00000209023652C0 49] iPhoneSE, [000002090267C400][0000020902369440 49] iPhone8, [0000020902638900][000002090236D5C0 49] iPhone8Plus, [000002090263AE00][0000020902371740 49] iPhoneX, [00000209025FDD00][00000209023758C0 49] iPhoneXS, [000002090263A700][0000020902379A40 49] iPhoneXSMax, [00000209025FDC00][000002090237DBC0 49] iPhoneXR, [000002090263A800][00000209023801C0 49] iPhone11, [00000209025FCF00][0000020902384340 49] iPhone11Pro, [0000020902638B00][00000209023884C0 49] iPhone11ProMax, [00000209025FCD00][000002090238C640 49] iPhoneSE2, [0000020902638E00][00000209023907C0 49] iPhone12Mini, [000002090267F800][0000020902394940 49] iPhone12, [000002090263B000][0000020902398AC0 49] iPhone12Pro, [000002090267F700][000002090239CC40 49] iPhone12ProMax, [0000020902639E00][000002090235CD80 49] iPadPro105, [000002090267D300][00000209023A0EC0 49] iPadPro129, [000002090263BE00][00000209023A5000 49] iPadPro97, [000002090267DC00][00000209023A9140 49] iPadPro2_129, [000002090263A000][00000209023B12C0 49] iPad5, [000002090267E300][00000209023B5440 49] iPad6, [000002090263BB00][00000209023B95C0 49] iPad7, [000002090267DE00][00000209023BD740 49] iPad8, [0000020902638A00][00000209023C18C0 49] iPadPro11, [000002090267E600][00000209023C5A40 49] iPadPro2_11, [0000020902638F00][00000209023C9BC0 49] iPadPro3_129, [000002090267E800][00000209023CC1C0 49] iPadPro4_129, [000002090263BC00][00000209023D0340 49] AppleTV, [000002090267DA00][00000209023D44C0 49] AppleTV4K, [000002090263A600][00000209023D8640 49] TVOS, [000002090267E100][00000209023DC7C0 49] Mac, [000002090263AF00][00000209023E0940 49] MacClient, [000002090267EA00][00000209023E4AC0 49] MacNoEditor, [000002090263AC00][00000209023E8C40 49] MacServer, [000002090267F000][00000209023ECDC0 49] Linux, [0000020902638400][00000209023F0F40 49] LinuxAArch64, [000002090267C700][00000209023AD080 49] LinuxNoEditor, [000002090263B700][00000209023F51C0 49] LinuxAArch64NoEditor, [000002090267FB00][00000209023F9300 49] LinuxClient, [000002090263B400][0000020903411480 49] LinuxAArch64Client, [000002090267FE00][0000020903415600 49] LinuxServer, [0000020902638700][0000020903419780 49] LinuxAArch64Server, [000002090267DF00][000002090341D900 49] Android, [000002090263AA00][0000020903421A80 49] Android_Low, [000002090267ED00][00000209034A7C00 49] Android_Mid, [0000020902639F00][000002097C1C2200 49] Android_High, [000002090267EB00][000002097C1C6380 49] Android_Default, [0000020902638100][00000209799C6500 49] Android_Adreno4xx, [000002090267C500][000002097C1FA680 49] Android_Adreno5xx_Low, [0000020902639400][000002097C222800 49] Android_Adreno5xx, [000002090267F400][000002097C226980 49] Android_Adreno6xx, [000002090263A300][000002097C22AB00 49] Android_Adreno6xx_Vulkan, [000002090267FD00][000002097C22EC80 49] Android_Mali_T6xx, [0000020902638200][000002097C232E00 49] Android_Mali_T7xx, [000002090267F600][0000020979E10F80 49] Android_Mali_T8xx, [000002090263B200][0000020979E19100 49] Android_Mali_G71, [00000209025FF100][00000209023FD240 49] Android_Mali_G72, [0000020902646F00][0000020979E1D380 49] Android_Mali_G72_Vulkan, [00000209025FEB00][0000020979E474C0 49] Android_Mali_G76, [0000020902644500][000002097F9C3640 49] Android_Mali_G76_Vulkan, [00000209025FCC00][000002097F9FB7C0 49] Android_Mali_G77, [0000020902644600][000002097FA0F940 49] Android_Mali_G77_Vulkan, [00000209025FE400][000002097FA13AC0 49] Android_Mali_G78, [0000020902644D00][00000209034700C0 49] Android_Mali_G78_Vulkan, [00000209025FFD00][000002097ED06240 49] Android_Mali_G710, [0000020902646B00][00000209037FE3C0 49] Android_Mali_G710_Vulkan, [00000209025FEA00][0000020903802540 49] Android_Vulkan_SM5, [0000020902645A00][000002097F9C66C0 49] Android_PowerVR_G6xxx, [00000209025FC500][0000020903806840 49] Android_PowerVR_GT7xxx, [0000020902644200][000002090380A9C0 49] Android_PowerVR_GE8xxx, [00000209025FFB00][0000020903474B40 49] Android_PowerVR_GM9xxx, [0000020902646100][000002090347CCC0 49] Android_PowerVR_GM9xxx_Vulkan, [00000209025FDF00][00000209020ACE40 49] Android_TegraK1, [0000020902644A00][00000209020B0FC0 49] Android_Unknown_Vulkan, [00000209025FF900][00000209020B5140 49] Lumin, [0000020902645100][00000209044392C0 49] Lumin_Desktop, [00000209025FE000][000002097F9BF400 49] HoloLens, 
+Using QuadricMeshReduction for automatic static mesh reduction
+Using SimplygonMeshReduction for automatic skeletal mesh reduction
+Using ProxyLODMeshReduction for automatic mesh merging
+No distributed automatic mesh merging module available
+No distributed automatic mesh merging module available
+UnknownSteampunk 1.0.0, NetCL: 17155196, EngineNetVer: 17, GameNetVer: 0 (Checksum: 2205513527)
+Default maximum texture size for cubemaps generated from long-lat sources has been changed from 512 to unlimited. In order to preserve old behaiour for '/Engine/MapTemplates/Sky/DaylightAmbientCubemap.DaylightAmbientCubemap', its maximum texture size has been explicitly set to 512.
+PokeAHoleMaterial loaded successfully
+17178 objects as part of root set at end of initial load.
+4301856 out of 0 bytes used by permanent object pool.
+CloseDisregardForGC: 0/0 objects in disregard for GC pool
+Niagara Debugger Client Initialized | Session: 28E4C6CF44260283383BACA48F928CDF | Instance: 1B352D2A408E5A5D0CAAAF9804C52E1C (DESKTOP-GGN94JM-26040).
+PNG Warning: Duplicate iCCP chunk
+PNG Warning: Duplicate iCCP chunk
+Using Python 3.7.7
+Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
+Initializing TcpMessaging bridge
+
+
+Script Stack (0 frames):
+
+FPlatformStackWalk::StackWalkAndDump -  0.130 s
+=== Handled ensure: ===
+
+Ensure condition failed: !AttachmentRules.bWeldSimulatedBodies [File:D:/Build/++UE4/Sync/Engine/Source/Runtime/Engine/Private/Components/SceneComponent.cpp] [Line: 1825]
+AttachToComponent when called from a constructor cannot weld simulated bodies. Consider calling SetupAttachment directly instead.
+Stack: 
+[Callstack] 0x00007ffe70fe2179 UE4Editor-Engine.dll!UnknownFunction []
+[Callstack] 0x00007ffe6fa26af6 UE4Editor-Engine.dll!UnknownFunction []
+[Callstack] 0x00007ffe58862dbf UE4Editor-UnknownSteampunk.dll!AUnknownSteampunkCharacter::AUnknownSteampunkCharacter() [C:\Users\ik760\Documents\GitHub\UnknownSteampunk\UnknownSteampunk\Source\UnknownSteampunk\UnknownSteampunkCharacter.cpp:52]
+[Callstack] 0x00007ffeb84f61d3 UE4Editor-CoreUObject.dll!UnknownFunction []
+[Callstack] 0x00007ffeb8818e6f UE4Editor-CoreUObject.dll!UnknownFunction []
+[Callstack] 0x00007ffeb87f52d1 UE4Editor-CoreUObject.dll!UnknownFunction []
+[Callstack] 0x00007ffeb86bdc85 UE4Editor-CoreUObject.dll!UnknownFunction []
+[Callstack] 0x00007ffeb9ef1d1a UE4Editor-Core.dll!UnknownFunction []
+[Callstack] 0x00007ffeb9f116d3 UE4Editor-Core.dll!UnknownFunction []
+[Callstack] 0x00007ffeed756433 UE4Editor-Projects.dll!UnknownFunction []
+[Callstack] 0x00007ffeed75674f UE4Editor-Projects.dll!UnknownFunction []
+[Callstack] 0x00007ff7934c5632 UE4Editor.exe!UnknownFunction []
+[Callstack] 0x00007ff7934c8ff0 UE4Editor.exe!UnknownFunction []
+[Callstack] 0x00007ff7934c0d1c UE4Editor.exe!UnknownFunction []
+[Callstack] 0x00007ff7934c10aa UE4Editor.exe!UnknownFunction []
+[Callstack] 0x00007ff7934c40cd UE4Editor.exe!UnknownFunction []
+[Callstack] 0x00007ff7934d5984 UE4Editor.exe!UnknownFunction []
+[Callstack] 0x00007ff7934d853a UE4Editor.exe!UnknownFunction []
+[Callstack] 0x00007fff0b797034 KERNEL32.DLL!UnknownFunction []
+[Callstack] 0x00007fff0d562651 ntdll.dll!UnknownFunction []
+
+               SubmitErrorReport -  0.000 s
+                   SendNewReport -  1.284 s
+            FDebug::EnsureFailed -  1.420 s
+
+
+Script Stack (0 frames):
+
+FPlatformStackWalk::StackWalkAndDump -  0.030 s
+=== Handled ensure: ===
+
+Ensure condition failed: AttachmentRules.LocationRule == EAttachmentRule::KeepRelative && AttachmentRules.RotationRule == EAttachmentRule::KeepRelative && AttachmentRules.ScaleRule == EAttachmentRule::KeepRelative [File:D:/Build/++UE4/Sync/Engine/Source/Runtime/Engine/Private/Components/SceneComponent.cpp] [Line: 1826]
+AttachToComponent when called from a constructor is only setting up attachment and will always be treated as KeepRelative. Consider calling SetupAttachment directly instead.
+Stack: 
+[Callstack] 0x00007ffe70fe26f9 UE4Editor-Engine.dll!UnknownFunction []
+[Callstack] 0x00007ffe6fa26b1f UE4Editor-Engine.dll!UnknownFunction []
+[Callstack] 0x00007ffe58862dbf UE4Editor-UnknownSteampunk.dll!AUnknownSteampunkCharacter::AUnknownSteampunkCharacter() [C:\Users\ik760\Documents\GitHub\UnknownSteampunk\UnknownSteampunk\Source\UnknownSteampunk\UnknownSteampunkCharacter.cpp:52]
+[Callstack] 0x00007ffeb84f61d3 UE4Editor-CoreUObject.dll!UnknownFunction []
+[Callstack] 0x00007ffeb8818e6f UE4Editor-CoreUObject.dll!UnknownFunction []
+[Callstack] 0x00007ffeb87f52d1 UE4Editor-CoreUObject.dll!UnknownFunction []
+[Callstack] 0x00007ffeb86bdc85 UE4Editor-CoreUObject.dll!UnknownFunction []
+[Callstack] 0x00007ffeb9ef1d1a UE4Editor-Core.dll!UnknownFunction []
+[Callstack] 0x00007ffeb9f116d3 UE4Editor-Core.dll!UnknownFunction []
+[Callstack] 0x00007ffeed756433 UE4Editor-Projects.dll!UnknownFunction []
+[Callstack] 0x00007ffeed75674f UE4Editor-Projects.dll!UnknownFunction []
+[Callstack] 0x00007ff7934c5632 UE4Editor.exe!UnknownFunction []
+[Callstack] 0x00007ff7934c8ff0 UE4Editor.exe!UnknownFunction []
+[Callstack] 0x00007ff7934c0d1c UE4Editor.exe!UnknownFunction []
+[Callstack] 0x00007ff7934c10aa UE4Editor.exe!UnknownFunction []
+[Callstack] 0x00007ff7934c40cd UE4Editor.exe!UnknownFunction []
+[Callstack] 0x00007ff7934d5984 UE4Editor.exe!UnknownFunction []
+[Callstack] 0x00007ff7934d853a UE4Editor.exe!UnknownFunction []
+[Callstack] 0x00007fff0b797034 KERNEL32.DLL!UnknownFunction []
+[Callstack] 0x00007fff0d562651 ntdll.dll!UnknownFunction []
+
+               SubmitErrorReport -  0.000 s
