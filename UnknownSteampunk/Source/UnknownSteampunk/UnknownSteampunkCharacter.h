@@ -42,4 +42,7 @@ public:
 	FORCEINLINE class UCameraComponent* GetSideViewCameraComponent() const { return SideViewCameraComponent; }
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
+
+	UPROPERTY(EditDefaultOnly, Category = "Spawning")
+	TSubclassOf<AActor> ActorToSpawn;
 };

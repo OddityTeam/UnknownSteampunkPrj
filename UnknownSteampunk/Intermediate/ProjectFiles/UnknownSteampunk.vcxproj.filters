@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\UnknownSteampunk.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{433EBE3B-0F94-47D1-BB88-0ADB007E11EA}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\UnknownSteampunk.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\UnknownSteampunkEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{2B57C806-305C-45B8-AF83-D457761771E6}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\UnknownSteampunk">
+      <UniqueIdentifier>{68538BAC-C8A7-4D2D-8A42-776647275CA9}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\UnknownSteampunk\UnknownSteampunk.Build.cs">
+      <Filter>Source\UnknownSteampunk</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\UnknownSteampunk\UnknownSteampunk.cpp">
+      <Filter>Source\UnknownSteampunk</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnknownSteampunk\UnknownSteampunk.h">
+      <Filter>Source\UnknownSteampunk</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnknownSteampunk\UnknownSteampunkCharacter.cpp">
+      <Filter>Source\UnknownSteampunk</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnknownSteampunk\UnknownSteampunkCharacter.h">
+      <Filter>Source\UnknownSteampunk</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnknownSteampunk\UnknownSteampunkGameMode.cpp">
+      <Filter>Source\UnknownSteampunk</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnknownSteampunk\UnknownSteampunkGameMode.h">
+      <Filter>Source\UnknownSteampunk</Filter>
+    </ClInclude>
+    <Filter Include="Source\UnknownSteampunk\Health">
+      <UniqueIdentifier>{C122E70D-E0B6-451C-A42F-4C1AAF723966}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\UnknownSteampunk\Health\HealthComponent.cpp">
+      <Filter>Source\UnknownSteampunk\Health</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnknownSteampunk\Health\HealthComponent.h">
+      <Filter>Source\UnknownSteampunk\Health</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

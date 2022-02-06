@@ -59,6 +59,12 @@ void AUnknownSteampunkCharacter::SetupPlayerInputComponent(class UInputComponent
 	PlayerInputComponent->BindTouch(IE_Released, this, &AUnknownSteampunkCharacter::TouchStopped);
 }
 
+void AUnknownSteampunkCharacter::SpawnObject(FVector Location)
+{
+	FActorSpawnParameters SpawnParams;
+	AActor* SpawnActorRef GetWorld()->SpawnActor<AActor>(ActorToSpawn, Location, SpawnParams);
+}
+
 void AUnknownSteampunkCharacter::MoveRight(float Value)
 {
 	// add movement in that direction
