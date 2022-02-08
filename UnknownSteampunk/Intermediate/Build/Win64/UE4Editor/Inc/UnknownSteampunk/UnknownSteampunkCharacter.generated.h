@@ -13,28 +13,28 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define UNKNOWNSTEAMPUNK_UnknownSteampunkCharacter_generated_h
 
-#define UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_22_SPARSE_DATA
-#define UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_22_RPC_WRAPPERS
-#define UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_22_RPC_WRAPPERS_NO_PURE_DECLS
-#define UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_22_INCLASS_NO_PURE_DECLS \
+#define UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_12_SPARSE_DATA
+#define UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_12_RPC_WRAPPERS
+#define UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_12_RPC_WRAPPERS_NO_PURE_DECLS
+#define UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAUnknownSteampunkCharacter(); \
 	friend struct Z_Construct_UClass_AUnknownSteampunkCharacter_Statics; \
 public: \
-	DECLARE_CLASS(AUnknownSteampunkCharacter, APaperCharacter, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/UnknownSteampunk"), NO_API) \
+	DECLARE_CLASS(AUnknownSteampunkCharacter, ACharacter, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/UnknownSteampunk"), NO_API) \
 	DECLARE_SERIALIZER(AUnknownSteampunkCharacter)
 
 
-#define UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_22_INCLASS \
+#define UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_12_INCLASS \
 private: \
 	static void StaticRegisterNativesAUnknownSteampunkCharacter(); \
 	friend struct Z_Construct_UClass_AUnknownSteampunkCharacter_Statics; \
 public: \
-	DECLARE_CLASS(AUnknownSteampunkCharacter, APaperCharacter, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/UnknownSteampunk"), NO_API) \
+	DECLARE_CLASS(AUnknownSteampunkCharacter, ACharacter, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/UnknownSteampunk"), NO_API) \
 	DECLARE_SERIALIZER(AUnknownSteampunkCharacter)
 
 
-#define UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_22_STANDARD_CONSTRUCTORS \
+#define UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_12_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AUnknownSteampunkCharacter(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AUnknownSteampunkCharacter) \
@@ -47,7 +47,7 @@ private: \
 public:
 
 
-#define UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_22_ENHANCED_CONSTRUCTORS \
+#define UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_12_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AUnknownSteampunkCharacter(AUnknownSteampunkCharacter&&); \
@@ -58,35 +58,32 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AUnknownSteampunkCharacter)
 
 
-#define UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_22_PRIVATE_PROPERTY_OFFSET \
+#define UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_12_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__SideViewCameraComponent() { return STRUCT_OFFSET(AUnknownSteampunkCharacter, SideViewCameraComponent); } \
-	FORCEINLINE static uint32 __PPO__CameraBoom() { return STRUCT_OFFSET(AUnknownSteampunkCharacter, CameraBoom); } \
-	FORCEINLINE static uint32 __PPO__QKey() { return STRUCT_OFFSET(AUnknownSteampunkCharacter, QKey); } \
-	FORCEINLINE static uint32 __PPO__RunningAnimation() { return STRUCT_OFFSET(AUnknownSteampunkCharacter, RunningAnimation); } \
-	FORCEINLINE static uint32 __PPO__IdleAnimation() { return STRUCT_OFFSET(AUnknownSteampunkCharacter, IdleAnimation); }
+	FORCEINLINE static uint32 __PPO__CameraBoom() { return STRUCT_OFFSET(AUnknownSteampunkCharacter, CameraBoom); }
 
 
-#define UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_19_PROLOG
-#define UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_22_GENERATED_BODY_LEGACY \
+#define UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_9_PROLOG
+#define UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_12_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_22_PRIVATE_PROPERTY_OFFSET \
-	UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_22_SPARSE_DATA \
-	UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_22_RPC_WRAPPERS \
-	UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_22_INCLASS \
-	UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_22_STANDARD_CONSTRUCTORS \
+	UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_12_PRIVATE_PROPERTY_OFFSET \
+	UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_12_SPARSE_DATA \
+	UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_12_RPC_WRAPPERS \
+	UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_12_INCLASS \
+	UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_12_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_22_GENERATED_BODY \
+#define UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_12_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_22_PRIVATE_PROPERTY_OFFSET \
-	UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_22_SPARSE_DATA \
-	UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
-	UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_22_INCLASS_NO_PURE_DECLS \
-	UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_22_ENHANCED_CONSTRUCTORS \
+	UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_12_PRIVATE_PROPERTY_OFFSET \
+	UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_12_SPARSE_DATA \
+	UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+	UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_12_INCLASS_NO_PURE_DECLS \
+	UnknownSteampunk_Source_UnknownSteampunk_UnknownSteampunkCharacter_h_12_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
