@@ -10,6 +10,8 @@
 #include "Particles/ParticleSystemComponent.h"
 #include "Components/AudioComponent.h"
 #include "Sound/SoundBase.h"
+// include DrawDebugHelpers
+#include "DrawDebugHelpers.h"
 
 AUnknownSteampunkCharacter::AUnknownSteampunkCharacter()
 {
@@ -20,7 +22,7 @@ AUnknownSteampunkCharacter::AUnknownSteampunkCharacter()
 	bUseControllerRotationPitch = false;
 	bUseControllerRotationYaw = false;
 	bUseControllerRotationRoll = false;
-
+     
 	// Create a camera boom attached to the root (capsule)
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
 	CameraBoom->SetupAttachment(RootComponent);
@@ -81,6 +83,18 @@ AUnknownSteampunkCharacter::AUnknownSteampunkCharacter()
 	// I want the sound to come from slighty in front of the pawn.
 	SoaringAudioComponent->SetRelativeLocation(FVector(100.0f, 0.0f, 0.0f));
 
+	// pickup and rotate
+	HoldingComponent = CreateDefaultSubobject<USceneComponent>(TEXT("HoldingComponent"));
+	HoldingComponent->SetRelativeLocation(FVector(0,50,50));
+	HoldingComponent->AttachToComponent(this->GetMesh(),
+											  FAttachmentTransformRules(EAttachmentRule::SnapToTarget, true),
+											  TEXT("FP_MuzzleLocation"));
+
+	CurrentItem = NULL;
+	bCanThrow = true;
+	bInspecting = false;
+
+	
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
 }
@@ -106,6 +120,9 @@ void AUnknownSteampunkCharacter::PostInitializeComponents()
 void AUnknownSteampunkCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+	
+	//PitchMax = GetWorld()->GetFirstPlayerController()->PlayerCameraManager->ViewPitchMax;
+	//PitchMin = GetWorld()->GetFirstPlayerController()->PlayerCameraManager->ViewPitchMin;
 
 
 	// You can fade the sound in... 
@@ -127,6 +144,11 @@ void AUnknownSteampunkCharacter::SetupPlayerInputComponent(class UInputComponent
 	PlayerInputComponent->BindAction("Soaring", IE_Pressed, this, &AUnknownSteampunkCharacter::Soaring);
 	PlayerInputComponent->BindAction("Soaring", IE_Pressed, this, &AUnknownSteampunkCharacter::ParticleToggle);
 	PlayerInputComponent->BindAction("Soaring", IE_Released, this, &AUnknownSteampunkCharacter::ParticleToggle);
+
+	// Bind action event
+	PlayerInputComponent->BindAction("Action", IE_Pressed, this, &AUnknownSteampunkCharacter::OnAction);
+
+
 }
 
 void AUnknownSteampunkCharacter::Soaring()
@@ -138,19 +160,21 @@ void AUnknownSteampunkCharacter::MoveRight(float Value)
 {
 	// Apply the input to the character motion
 	float MoveValue = Value;
-	if (TurnJump % 2)
-	{
-		MoveValue = -MoveValue;
-	}
-	if (Value)
-	{
-		AxisMoving = true;
-	}
-	else
-	{
-		AxisMoving = false;
-	}
-	AddMovementInput(FVector(0.0f, -1.0f, 0.0f), MoveValue);
+
+		if (TurnJump % 2)
+		{
+			MoveValue = -MoveValue;
+		}
+		if (Value)
+		{
+			AxisMoving = true;
+		}
+		else
+		{
+			AxisMoving = false;
+		}
+		AddMovementInput(FVector(0.0f, -1.0f, 0.0f), MoveValue);
+	
 }
 
 
@@ -158,6 +182,33 @@ void AUnknownSteampunkCharacter::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
 	UpdateCharacter();
+
+	//pickup and rotate
+	Start = GetActorLocation();
+	ForwardVector = GetActorForwardVector();
+	End = ((ForwardVector * FRadius) + Start);
+
+	//DrawDebugLine(GetWorld(), Start, End, FColor::Green, false, 1, 0, 10);
+  
+	if(!bHoldingItem)
+	{  // GetWorld()->LineTraceMultiByChannel(); TODO
+		if(GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, DefaultComponentQueryParams, DefaultResponseParam)) 
+		{
+			if(Hit.GetActor()->GetClass()->IsChildOf(APickupAndRotateActor::StaticClass())) 
+			{				
+				CurrentItem = Cast<APickupAndRotateActor>(Hit.GetActor());
+			}
+		}
+		else
+		{
+			CurrentItem = NULL;
+		}
+	}
+	else
+	{
+		HoldingComponent->SetRelativeLocation(FVector(0.0f, 80.0f, 50.0f));
+		CurrentItem->RotateActor();
+	}
 }
 
 void AUnknownSteampunkCharacter::UpdateCharacter()
@@ -191,12 +242,14 @@ void AUnknownSteampunkCharacter::UpdateCharacter()
 	}
 
 	// changing second jump vector
-	if ((JumpCurrentCount > 1) && (TravelDirection == 0) && AxisMoving) //TODO
+	if ((JumpCurrentCount > 0) && (TravelDirection == 0) && AxisMoving) //TODO
 	{
 		if (IsRootComponentCollisionRegistered())
 		{
-			TurnJump++;
-			JumpCurrentCount--;
+			//TurnJump++;
+			//JumpCurrentCount--;
+			GetCharacterMovement()->AddImpulse(FVector(0,-GetActorForwardVector().Y,1)
+				*FForce*GetMesh()->GetMass());
 		}
 	}
 	//if we hit the floor
@@ -205,6 +258,16 @@ void AUnknownSteampunkCharacter::UpdateCharacter()
 		TurnJump = 0;
 		QKey = false;
 		ParticleToggle();
+	}
+	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("My Location is: %s"), *GetActorForwardVector().ToString()));
+	if(((GetActorRotation().Yaw>80)&&(GetActorRotation().Yaw<100))||
+		((GetActorRotation().Yaw<-80)&&(GetActorRotation().Yaw>-100))) //TODO
+	{
+		bCanThrow = true;
+	}
+	else
+	{
+		bCanThrow = false;
 	}
 }
 
@@ -218,5 +281,32 @@ void AUnknownSteampunkCharacter::ParticleToggle()
 		LeftLegParticleSystem->SetActive(QKey);
 		//Audio activation
 		SoaringAudioComponent->SetActive(QKey);
+	}
+}
+
+
+
+void AUnknownSteampunkCharacter::OnAction()
+{
+	
+	if(CurrentItem&&bCanThrow)
+	{
+		ToggleItemPickup();
+	}
+}
+
+
+
+
+void AUnknownSteampunkCharacter::ToggleItemPickup()
+{
+	if(CurrentItem)
+	{
+		bHoldingItem = !bHoldingItem;
+		CurrentItem->Pickup();
+		if(!bHoldingItem)
+		{
+			CurrentItem = NULL;
+		}
 	}
 }

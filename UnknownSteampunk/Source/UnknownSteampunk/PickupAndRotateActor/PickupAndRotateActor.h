@@ -4,9 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-
-// include camera component
-#include "Camera/CameraComponent.h"
+#include "Kismet/GameplayStatics.h"
+// include capsule component
+#include "Components/CapsuleComponent.h"
 
 #include "PickupAndRotateActor.generated.h"
 
@@ -37,7 +37,7 @@ public:
 
 	FRotator ControlRotation;
 	ACharacter* MyCharacter;
-	UCameraComponent* PlayerCamera;
+	UCapsuleComponent* PlayerCapsule;
 	FVector ForwardVector;
 protected:
 	// Called when the game starts or when spawned

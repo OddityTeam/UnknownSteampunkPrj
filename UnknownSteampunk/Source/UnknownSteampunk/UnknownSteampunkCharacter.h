@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "PickupAndRotateActor/PickupAndRotateActor.h"
 #include "UnknownSteampunkCharacter.generated.h"
 
 UCLASS(config=Game)
@@ -19,6 +20,19 @@ class AUnknownSteampunkCharacter : public ACharacter
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class USpringArmComponent* CameraBoom;
 
+
+
+	/** First person camera */
+	//UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+	//class UCapsuleComponent* FirstPersonCameraComponent; //todo
+
+	/** Holding Component */
+	UPROPERTY(EditAnywhere)
+	class USceneComponent* HoldingComponent;
+	
+	UPROPERTY(EditAnywhere, Category = "Jump")
+	float FForce = 4000;
+	
 	virtual void Tick(float DeltaSeconds) override;
 
 	bool AxisMoving = 0;
@@ -37,7 +51,28 @@ class AUnknownSteampunkCharacter : public ACharacter
 	USoundBase* SoaringAudioBase;
 	UPROPERTY(EditAnywhere, Category = "Audio")
 	UAudioComponent* SoaringAudioComponent;
-   
+
+
+	//pickup and rotate
+	UPROPERTY(EditAnywhere, Category = "Collision")
+	float FRadius = 200;
+	bool bCanThrow;
+	bool bHoldingItem;
+	bool bInspecting;
+	UPROPERTY(EditAnywhere)
+	class APickupAndRotateActor* CurrentItem;
+	
+	FVector HoldingComp;
+	FRotator LastRotation;
+
+	FVector Start;
+	FVector ForwardVector;
+	FVector End;
+
+	FHitResult Hit;
+	
+	FComponentQueryParams DefaultComponentQueryParams;
+	FCollisionResponseParams DefaultResponseParam;
 
 protected:
 
@@ -45,13 +80,19 @@ protected:
 	void MoveRight(float Val);
 
     void Soaring();
-	void StopSoaring();
+
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 	// End of APawn interface
 	void UpdateCharacter();
 	
 	void ParticleToggle();
+
+	// pickup and rotate
+	void ToggleItemPickup();
+
+
+	void OnAction();
 public:
 	AUnknownSteampunkCharacter();
     virtual void PostInitializeComponents() override;
@@ -60,4 +101,6 @@ public:
 	FORCEINLINE class UCameraComponent* GetSideViewCameraComponent() const { return SideViewCameraComponent; }
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
+
+
 };

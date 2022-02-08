@@ -10,13 +10,24 @@ APickupAndRotateActor::APickupAndRotateActor()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	MyMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("My Mesh"));
-	MyMesh->SetSimulatePhysics(true);
-	RootComponent = MyMesh;
+
 
 	bHolding = false;
 	bGravity = true;
 
+// add Cylinder to root
+ MyMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("VisualRepresentation"));
+ MyMesh->SetSimulatePhysics(true);
+    MyMesh->SetupAttachment(RootComponent);
+
+    static ConstructorHelpers::FObjectFinder<UStaticMesh> CylinderAsset(TEXT("/Game/StarterContent/Cylinder"));
+
+	if (CylinderAsset.Succeeded())
+    {
+        MyMesh->SetStaticMesh(CylinderAsset.Object);
+        MyMesh->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
+        MyMesh->SetWorldScale3D(FVector(1.f));
+	}
 }
 
 // Called when the game starts or when spawned
@@ -25,7 +36,7 @@ void APickupAndRotateActor::BeginPlay()
 	Super::BeginPlay();
 
 	MyCharacter = UGameplayStatics::GetPlayerCharacter(this, 0);
-	PlayerCamera = MyCharacter->FindComponentByClass<UCameraComponent>();
+	PlayerCapsule = MyCharacter->FindComponentByClass<UCapsuleComponent>();
 
 	TArray<USceneComponent*> Components;
  
@@ -58,6 +69,7 @@ void APickupAndRotateActor::Tick(float DeltaTime)
 
 void APickupAndRotateActor::RotateActor()
 {
+    
 	ControlRotation = GetWorld()->GetFirstPlayerController()->GetControlRotation();
 	SetActorRotation(FQuat(ControlRotation));
 }
@@ -72,8 +84,8 @@ void APickupAndRotateActor::Pickup()
 
 	if(!bHolding) 
 	{
-		ForwardVector = PlayerCamera->GetForwardVector();
-		MyMesh->AddForce(ForwardVector*100000*MyMesh->GetMass());
+		ForwardVector = PlayerCapsule->GetForwardVector();
+		MyMesh->AddForce(ForwardVector*10*MyMesh->GetMass());
 	}
 
 }
