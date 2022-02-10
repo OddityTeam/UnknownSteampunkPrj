@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\UnknownSteampunk.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{12130986-3580-4F11-8DF2-BBD4D24F0574}</UniqueIdentifier>
+      <UniqueIdentifier>{DB07A511-678B-4DB0-89C4-A05ACE7322F1}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\UnknownSteampunk.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{89568B68-0118-4384-BBA4-882FCB918689}</UniqueIdentifier>
+      <UniqueIdentifier>{182F93E0-689E-4EF0-92A6-0C08537FCBEC}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,7 +30,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\UnknownSteampunk">
-      <UniqueIdentifier>{CFB3052F-FDEF-4273-A762-5CFCEE4FB4B9}</UniqueIdentifier>
+      <UniqueIdentifier>{8EFDCA72-D3D4-4027-8DA1-09DB93A753E6}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\UnknownSteampunk\UnknownSteampunk.Build.cs">
       <Filter>Source\UnknownSteampunk</Filter>
@@ -52,6 +52,24 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\UnknownSteampunk\UnknownSteampunkGameMode.h">
       <Filter>Source\UnknownSteampunk</Filter>
+    </ClInclude>
+    <Filter Include="Source\UnknownSteampunk\Health">
+      <UniqueIdentifier>{AC0F99DF-186F-4ED2-B257-FA47E7DA9B9A}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\UnknownSteampunk\Health\HealthComponent.cpp">
+      <Filter>Source\UnknownSteampunk\Health</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnknownSteampunk\Health\HealthComponent.h">
+      <Filter>Source\UnknownSteampunk\Health</Filter>
+    </ClInclude>
+    <Filter Include="Source\UnknownSteampunk\PickudAndRotateActor">
+      <UniqueIdentifier>{D694C5C6-37F5-474A-977D-07EE2AC5455B}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\UnknownSteampunk\PickudAndRotateActor\PickupAndRotateActor.cpp">
+      <Filter>Source\UnknownSteampunk\PickudAndRotateActor</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnknownSteampunk\PickudAndRotateActor\PickupAndRotateActor.h">
+      <Filter>Source\UnknownSteampunk\PickudAndRotateActor</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

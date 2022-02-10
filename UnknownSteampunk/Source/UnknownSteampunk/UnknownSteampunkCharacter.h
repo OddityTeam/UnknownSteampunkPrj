@@ -43,6 +43,7 @@ class AUnknownSteampunkCharacter : public ACharacter
 
 	//particle system
 	UParticleSystem* UPart;
+	UParticleSystem* UPartFire;
 	UParticleSystemComponent* LeftLegParticleSystem;
 	UParticleSystemComponent* RightLegParticleSystem;
 
@@ -85,7 +86,7 @@ protected:
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 	// End of APawn interface
 	void UpdateCharacter();
-	
+	void UpdatePickupAndRotate();
 	void ParticleToggle();
 
 	// pickup and rotate

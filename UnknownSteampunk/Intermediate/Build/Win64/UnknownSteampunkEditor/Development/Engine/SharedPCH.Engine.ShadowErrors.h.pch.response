@@ -260,11 +260,11 @@
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"
-/I C:\Users\ik760\Documents\GitHub\UnknownSteampunkPrj\UnknownSteampunk\Intermediate\Build\Win64\UnknownSteampunkEditor\Development\Engine
-/Yc"C:\Users\ik760\Documents\GitHub\UnknownSteampunkPrj\UnknownSteampunk\Intermediate\Build\Win64\UnknownSteampunkEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Fp"C:\Users\ik760\Documents\GitHub\UnknownSteampunkPrj\UnknownSteampunk\Intermediate\Build\Win64\UnknownSteampunkEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
-"C:\Users\ik760\Documents\GitHub\UnknownSteampunkPrj\UnknownSteampunk\Intermediate\Build\Win64\UnknownSteampunkEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.cpp"
-/Fo"C:\Users\ik760\Documents\GitHub\UnknownSteampunkPrj\UnknownSteampunk\Intermediate\Build\Win64\UnknownSteampunkEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+/I "C:\Users\ik760\Downloads\UnknownSteampunkPrj-platforms (2)\UnknownSteampunkPrj-platforms\UnknownSteampunk\Intermediate\Build\Win64\UnknownSteampunkEditor\Development\Engine"
+/Yc"C:\Users\ik760\Downloads\UnknownSteampunkPrj-platforms (2)\UnknownSteampunkPrj-platforms\UnknownSteampunk\Intermediate\Build\Win64\UnknownSteampunkEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Fp"C:\Users\ik760\Downloads\UnknownSteampunkPrj-platforms (2)\UnknownSteampunkPrj-platforms\UnknownSteampunk\Intermediate\Build\Win64\UnknownSteampunkEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
+"C:\Users\ik760\Downloads\UnknownSteampunkPrj-platforms (2)\UnknownSteampunkPrj-platforms\UnknownSteampunk\Intermediate\Build\Win64\UnknownSteampunkEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.cpp"
+/Fo"C:\Users\ik760\Downloads\UnknownSteampunkPrj-platforms (2)\UnknownSteampunkPrj-platforms\UnknownSteampunk\Intermediate\Build\Win64\UnknownSteampunkEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
 /TP
 /GR-
 /W4

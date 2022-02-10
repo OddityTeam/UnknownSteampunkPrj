@@ -57,7 +57,7 @@ void EmptyLinkFunctionForGeneratedCodePickupAndRotateActor() {}
 #endif
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APickupAndRotateActor_Statics::NewProp_MyMesh_MetaData[] = {
-		{ "Category", "PickupAndRotateActor" },
+		{ "Category", "Mesh" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "PickupAndRotateActor/PickupAndRotateActor.h" },
 	};
@@ -102,7 +102,7 @@ void EmptyLinkFunctionForGeneratedCodePickupAndRotateActor() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(APickupAndRotateActor, 945415396);
+	IMPLEMENT_CLASS(APickupAndRotateActor, 3687402339);
 	template<> UNKNOWNSTEAMPUNK_API UClass* StaticClass<APickupAndRotateActor>()
 	{
 		return APickupAndRotateActor::StaticClass();

@@ -21,8 +21,8 @@ void EmptyLinkFunctionForGeneratedCodeUnknownSteampunk_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0xF6C3B29D,
-				0x411B029A,
+				0x00A632BE,
+				0x55B4F2F8,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UE4CodeGen_Private::ConstructUPackage(ReturnPackage, PackageParams);

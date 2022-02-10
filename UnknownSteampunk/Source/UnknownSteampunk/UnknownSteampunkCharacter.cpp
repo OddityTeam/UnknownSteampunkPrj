@@ -49,8 +49,11 @@ AUnknownSteampunkCharacter::AUnknownSteampunkCharacter()
 	JumpMaxCount = 2;
 
 	// Create a particle system that we can activate or deactivate
-	static ConstructorHelpers::FObjectFinder<UParticleSystem> ParticleAsset(TEXT("/Game/Steam/P_smoke"));
-	UPart = ParticleAsset.Object;
+	static ConstructorHelpers::FObjectFinder<UParticleSystem> ParticleSteamAsset(TEXT("/Game/Particles/Steam/P_smoke"));
+	UPart = ParticleSteamAsset.Object;
+	
+	static ConstructorHelpers::FObjectFinder<UParticleSystem> ParticleFireAsset(TEXT("/Game/Particles/P_Fire"));
+	UPartFire = ParticleFireAsset.Object;
 	//Left leg
 	LeftLegParticleSystem = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("JumpLeftLegParticle"));
 	LeftLegParticleSystem->AttachToComponent(this->GetMesh(),
@@ -182,33 +185,8 @@ void AUnknownSteampunkCharacter::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
 	UpdateCharacter();
-
-	//pickup and rotate
-	Start = GetActorLocation();
-	ForwardVector = GetActorForwardVector();
-	End = ((ForwardVector * FRadius) + Start);
-
-	//DrawDebugLine(GetWorld(), Start, End, FColor::Green, false, 1, 0, 10);
-  
-	if(!bHoldingItem)
-	{  // GetWorld()->LineTraceMultiByChannel(); TODO
-		if(GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, DefaultComponentQueryParams, DefaultResponseParam)) 
-		{
-			if(Hit.GetActor()->GetClass()->IsChildOf(APickupAndRotateActor::StaticClass())) 
-			{				
-				CurrentItem = Cast<APickupAndRotateActor>(Hit.GetActor());
-			}
-		}
-		else
-		{
-			CurrentItem = NULL;
-		}
-	}
-	else
-	{
-		HoldingComponent->SetRelativeLocation(FVector(0.0f, 80.0f, 50.0f));
-		CurrentItem->RotateActor();
-	}
+	UpdatePickupAndRotate();
+	
 }
 
 void AUnknownSteampunkCharacter::UpdateCharacter()
@@ -240,9 +218,10 @@ void AUnknownSteampunkCharacter::UpdateCharacter()
 			Controller->SetControlRotation(FRotator(0.0f, 0.0f, 0.0f));
 		}
 	}
-
+ 
 	// changing second jump vector
-	if ((JumpCurrentCount > 0) && (TravelDirection == 0) && AxisMoving) //TODO
+	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("My Location is: %d"), IsRootComponentCollisionRegistered()));
+	if ((JumpCurrentCount < JumpMaxCount) && (TravelDirection == 0) && AxisMoving) //TODO
 	{
 		if (IsRootComponentCollisionRegistered())
 		{
@@ -257,6 +236,7 @@ void AUnknownSteampunkCharacter::UpdateCharacter()
 	{
 		TurnJump = 0;
 		QKey = false;
+		
 		ParticleToggle();
 	}
 	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("My Location is: %s"), *GetActorForwardVector().ToString()));
@@ -271,6 +251,35 @@ void AUnknownSteampunkCharacter::UpdateCharacter()
 	}
 }
 
+void AUnknownSteampunkCharacter::UpdatePickupAndRotate()
+{
+	//pickup and rotate
+	Start = GetActorLocation();
+	ForwardVector = GetActorForwardVector();
+	End = ((ForwardVector * FRadius) + Start);
+
+	//DrawDebugLine(GetWorld(), Start, End, FColor::Green, false, 1, 0, 10);
+  
+	if(!bHoldingItem)
+	{  // GetWorld()->LineTraceMultiByChannel(); TODO
+		if(GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, DefaultComponentQueryParams, DefaultResponseParam)) 
+		{
+			if(Hit.GetActor()->GetClass()->IsChildOf(APickupAndRotateActor::StaticClass())) 
+			{				
+				CurrentItem = Cast<APickupAndRotateActor>(Hit.GetActor());
+			}
+		}
+		else
+		{
+			CurrentItem = NULL;
+		}
+	}
+	else
+	{
+		HoldingComponent->SetRelativeLocation(FVector(0.0f, 80.0f, 50.0f));
+		CurrentItem->RotateActor();
+	}
+}
 void AUnknownSteampunkCharacter::ParticleToggle()
 {
 	if ((RightLegParticleSystem && RightLegParticleSystem->Template) &&
