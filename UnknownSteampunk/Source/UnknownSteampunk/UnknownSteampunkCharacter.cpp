@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+/// Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "UnknownSteampunkCharacter.h"
 #include "Camera/CameraComponent.h"
@@ -12,6 +12,7 @@
 #include "Sound/SoundBase.h"
 // include DrawDebugHelpers
 #include "DrawDebugHelpers.h"
+
 
 AUnknownSteampunkCharacter::AUnknownSteampunkCharacter()
 {
@@ -46,6 +47,7 @@ AUnknownSteampunkCharacter::AUnknownSteampunkCharacter()
 	GetCharacterMovement()->GroundFriction = 3.f;
 	GetCharacterMovement()->MaxWalkSpeed = 600.f;
 	GetCharacterMovement()->MaxFlySpeed = 600.f;
+	DefaultMaxAcceleration = GetCharacterMovement()->MaxAcceleration;
 	JumpMaxCount = 2;
 
 	// Create a particle system that we can activate or deactivate
@@ -123,10 +125,6 @@ void AUnknownSteampunkCharacter::PostInitializeComponents()
 void AUnknownSteampunkCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	
-	//PitchMax = GetWorld()->GetFirstPlayerController()->PlayerCameraManager->ViewPitchMax;
-	//PitchMin = GetWorld()->GetFirstPlayerController()->PlayerCameraManager->ViewPitchMin;
-
 
 	// You can fade the sound in... 
 	float startTime = 9.f;
@@ -142,6 +140,8 @@ void AUnknownSteampunkCharacter::SetupPlayerInputComponent(class UInputComponent
 {
 	// set up gameplay key bindings
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
+	//PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &AUnknownSteampunkCharacter::ToggleJumpParticles);
+	//PlayerInputComponent->BindAction("Jump", IE_Released, this, &AUnknownSteampunkCharacter::ToggleJumpParticles);
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
 	PlayerInputComponent->BindAxis("MoveRight", this, &AUnknownSteampunkCharacter::MoveRight);
 	PlayerInputComponent->BindAction("Soaring", IE_Pressed, this, &AUnknownSteampunkCharacter::Soaring);
@@ -157,6 +157,19 @@ void AUnknownSteampunkCharacter::SetupPlayerInputComponent(class UInputComponent
 void AUnknownSteampunkCharacter::Soaring()
 {
 	QKey = !QKey;
+	 FVector Velocity = GetVelocity();
+
+	if (QKey && GetCharacterMovement()->IsFalling()&&(Velocity.Z<0) )
+	{
+		GetCharacterMovement()->GravityScale = Gravity;
+		GetCharacterMovement()->MaxAcceleration = SoaringAcceleration;
+	}
+	// else
+	// {
+	// 	GetCharacterMovement()->GravityScale = DefaultCharacterGravity;
+	// 	GetCharacterMovement()->MaxAcceleration = DefaultMaxAcceleration;
+	// }
+	
 }
 
 void AUnknownSteampunkCharacter::MoveRight(float Value)
@@ -176,7 +189,9 @@ void AUnknownSteampunkCharacter::MoveRight(float Value)
 		{
 			AxisMoving = false;
 		}
-		AddMovementInput(FVector(0.0f, -1.0f, 0.0f), MoveValue);
+	
+		AddMovementInput(FVector(0.0f, -1.0f, 0.0f), MoveValue,true);
+	
 	
 }
 
@@ -186,28 +201,42 @@ void AUnknownSteampunkCharacter::Tick(float DeltaSeconds)
 	Super::Tick(DeltaSeconds);
 	UpdateCharacter();
 	UpdatePickupAndRotate();
+
+
+	//if Q key was pressed nd we falling we can soaring
+
+	  
+
 	
 }
 
 void AUnknownSteampunkCharacter::UpdateCharacter()
 {
 	const FVector PlayerVelocity = GetVelocity();
-	float FallDirection = PlayerVelocity.Z;
 
-	//if Q key was pressed nd we falling we can soaring
-	if (QKey && (FallDirection < 0))
+	if (QKey && GetCharacterMovement()->IsFalling()&&(PlayerVelocity.Z<0) )
 	{
 		GetCharacterMovement()->GravityScale = Gravity;
+		GetCharacterMovement()->MaxAcceleration = SoaringAcceleration;
 	}
-	else
+	else  // if we jump second time
 	{
-		GetCharacterMovement()->GravityScale = 2;
+		GetCharacterMovement()->GravityScale = DefaultCharacterGravity;
+		GetCharacterMovement()->MaxAcceleration = DefaultMaxAcceleration;
 	}
-
+	//if we hit the floor
+	 if (!GetCharacterMovement()->IsFalling())
+	{
+		
+		QKey = false;
+		GetCharacterMovement()->GravityScale = DefaultCharacterGravity;
+		GetCharacterMovement()->MaxAcceleration = DefaultMaxAcceleration;
+		ParticleToggle();
+	}
 	// Now setup the rotation of the controller based on the direction we are travelling
 	float TravelDirection = PlayerVelocity.Y;
 	// Set the rotation so that the character faces his direction of travel.
-	if (Controller != nullptr)
+	/*if (Controller != nullptr)
 	{
 		if (TravelDirection < 0.0f)
 		{
@@ -217,38 +246,21 @@ void AUnknownSteampunkCharacter::UpdateCharacter()
 		{
 			Controller->SetControlRotation(FRotator(0.0f, 0.0f, 0.0f));
 		}
-	}
+	}*/
  
 	// changing second jump vector
 	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("My Location is: %d"), IsRootComponentCollisionRegistered()));
-	if ((JumpCurrentCount < JumpMaxCount) && (TravelDirection == 0) && AxisMoving) //TODO
+	/*if ((JumpCurrentCount < JumpMaxCount) && (JumpCurrentCount > 0) &&(TravelDirection == 0) && AxisMoving) //TODO
 	{
+		
 		if (IsRootComponentCollisionRegistered())
 		{
-			//TurnJump++;
-			//JumpCurrentCount--;
 			GetCharacterMovement()->AddImpulse(FVector(0,-GetActorForwardVector().Y,1)
 				*FForce*GetMesh()->GetMass());
 		}
-	}
-	//if we hit the floor
-	else if (!GetCharacterMovement()->IsFalling())
-	{
-		TurnJump = 0;
-		QKey = false;
-		
-		ParticleToggle();
-	}
-	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("My Location is: %s"), *GetActorForwardVector().ToString()));
-	if(((GetActorRotation().Yaw>80)&&(GetActorRotation().Yaw<100))||
-		((GetActorRotation().Yaw<-80)&&(GetActorRotation().Yaw>-100))) //TODO
-	{
-		bCanThrow = true;
-	}
-	else
-	{
-		bCanThrow = false;
-	}
+	}*/
+
+
 }
 
 void AUnknownSteampunkCharacter::UpdatePickupAndRotate()
@@ -297,7 +309,16 @@ void AUnknownSteampunkCharacter::ParticleToggle()
 
 void AUnknownSteampunkCharacter::OnAction()
 {
-	
+	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("My Location is: %s"), *GetActorForwardVector().ToString()));
+	if(((GetActorRotation().Yaw>80)&&(GetActorRotation().Yaw<100))||
+		((GetActorRotation().Yaw<-80)&&(GetActorRotation().Yaw>-100))) //TODO
+			{
+		bCanThrow = true;
+			}
+	else
+	{
+		bCanThrow = false;
+	}
 	if(CurrentItem&&bCanThrow)
 	{
 		ToggleItemPickup();
@@ -318,4 +339,46 @@ void AUnknownSteampunkCharacter::ToggleItemPickup()
 			CurrentItem = NULL;
 		}
 	}
+}
+
+void AUnknownSteampunkCharacter::ToggleJumpParticles()
+{
+	if (UPart->IsValidLowLevelFast())
+	{
+		LeftLegParticleSystem->SetTemplate(UPartFire);
+		RightLegParticleSystem->SetTemplate(UPartFire);
+		RightLegParticleSystem->SetActive(true);
+		LeftLegParticleSystem->SetActive(true);
+		
+	}
+}
+
+void AUnknownSteampunkCharacter::UpdateWallJump()
+{
+	/*//wall jump
+	Start = GetActorLocation();
+	ForwardVector = GetActorForwardVector();
+	End = ((ForwardVector * FRadius) + Start);
+
+	//DrawDebugLine(GetWorld(), Start, End, FColor::Green, false, 1, 0, 10);
+  
+	if(!bHoldingItem)
+	{  // TODO
+		
+		if(GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, DefaultComponentQueryParams, DefaultResponseParam)) 
+		{
+			if(Hit.GetActor()->GetClass()->IsChildOf(AWallJumpActor::StaticClass())) 
+			{				
+				CurrentItem = Cast<AWallJumpActor>(Hit.GetActor());
+			}
+		}
+		else
+		{
+			CurrentItem = NULL;
+		}
+	}
+	else
+	{
+				CurrentItem->WallJump();
+	}*/
 }

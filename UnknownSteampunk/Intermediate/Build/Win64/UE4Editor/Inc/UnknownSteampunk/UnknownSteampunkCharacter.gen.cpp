@@ -50,13 +50,21 @@ void EmptyLinkFunctionForGeneratedCodeUnknownSteampunkCharacter() {}
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_HoldingComponent;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_FForce_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_FForce;
-#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Gravity_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FDoublePropertyParams NewProp_Gravity;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_DefaultCharacterGravity_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FDoublePropertyParams NewProp_DefaultCharacterGravity;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SoaringAcceleration_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FDoublePropertyParams NewProp_SoaringAcceleration;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_DefaultMaxAcceleration_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FDoublePropertyParams NewProp_DefaultMaxAcceleration;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SoaringAudioBase_MetaData[];
 #endif
@@ -121,19 +129,33 @@ void EmptyLinkFunctionForGeneratedCodeUnknownSteampunkCharacter() {}
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_HoldingComponent = { "HoldingComponent", nullptr, (EPropertyFlags)0x0040000000080009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AUnknownSteampunkCharacter, HoldingComponent), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_HoldingComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_HoldingComponent_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_FForce_MetaData[] = {
-		{ "Category", "Jump" },
-		{ "ModuleRelativePath", "UnknownSteampunkCharacter.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_FForce = { "FForce", nullptr, (EPropertyFlags)0x0040000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AUnknownSteampunkCharacter, FForce), METADATA_PARAMS(Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_FForce_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_FForce_MetaData)) };
-#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_Gravity_MetaData[] = {
 		{ "Category", "Soaring" },
 		{ "ModuleRelativePath", "UnknownSteampunkCharacter.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FDoublePropertyParams Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_Gravity = { "Gravity", nullptr, (EPropertyFlags)0x0040000000000001, UE4CodeGen_Private::EPropertyGenFlags::Double, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AUnknownSteampunkCharacter, Gravity), METADATA_PARAMS(Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_Gravity_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_Gravity_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_DefaultCharacterGravity_MetaData[] = {
+		{ "Category", "Soaring" },
+		{ "ModuleRelativePath", "UnknownSteampunkCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FDoublePropertyParams Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_DefaultCharacterGravity = { "DefaultCharacterGravity", nullptr, (EPropertyFlags)0x0040000000000001, UE4CodeGen_Private::EPropertyGenFlags::Double, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AUnknownSteampunkCharacter, DefaultCharacterGravity), METADATA_PARAMS(Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_DefaultCharacterGravity_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_DefaultCharacterGravity_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_SoaringAcceleration_MetaData[] = {
+		{ "Category", "Soaring" },
+		{ "ModuleRelativePath", "UnknownSteampunkCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FDoublePropertyParams Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_SoaringAcceleration = { "SoaringAcceleration", nullptr, (EPropertyFlags)0x0040000000000001, UE4CodeGen_Private::EPropertyGenFlags::Double, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AUnknownSteampunkCharacter, SoaringAcceleration), METADATA_PARAMS(Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_SoaringAcceleration_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_SoaringAcceleration_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_DefaultMaxAcceleration_MetaData[] = {
+		{ "Category", "Soaring" },
+		{ "ModuleRelativePath", "UnknownSteampunkCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FDoublePropertyParams Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_DefaultMaxAcceleration = { "DefaultMaxAcceleration", nullptr, (EPropertyFlags)0x0040000000000001, UE4CodeGen_Private::EPropertyGenFlags::Double, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AUnknownSteampunkCharacter, DefaultMaxAcceleration), METADATA_PARAMS(Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_DefaultMaxAcceleration_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_DefaultMaxAcceleration_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_SoaringAudioBase_MetaData[] = {
 		{ "Category", "Audio" },
@@ -169,8 +191,10 @@ void EmptyLinkFunctionForGeneratedCodeUnknownSteampunkCharacter() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_SideViewCameraComponent,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_CameraBoom,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_HoldingComponent,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_FForce,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_Gravity,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_DefaultCharacterGravity,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_SoaringAcceleration,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_DefaultMaxAcceleration,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_SoaringAudioBase,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_SoaringAudioComponent,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AUnknownSteampunkCharacter_Statics::NewProp_FRadius,
@@ -203,7 +227,7 @@ void EmptyLinkFunctionForGeneratedCodeUnknownSteampunkCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AUnknownSteampunkCharacter, 4116048626);
+	IMPLEMENT_CLASS(AUnknownSteampunkCharacter, 1898241266);
 	template<> UNKNOWNSTEAMPUNK_API UClass* StaticClass<AUnknownSteampunkCharacter>()
 	{
 		return AUnknownSteampunkCharacter::StaticClass();

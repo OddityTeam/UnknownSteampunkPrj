@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "PickupAndRotateActor/PickupAndRotateActor.h"
+#include "WallJumpActor/WallJumpActor.h"
 #include "UnknownSteampunkCharacter.generated.h"
 
 UCLASS(config=Game)
@@ -20,18 +21,13 @@ class AUnknownSteampunkCharacter : public ACharacter
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class USpringArmComponent* CameraBoom;
 
-
-
-	/** First person camera */
-	//UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
-	//class UCapsuleComponent* FirstPersonCameraComponent; //todo
-
+	
 	/** Holding Component */
 	UPROPERTY(EditAnywhere)
 	class USceneComponent* HoldingComponent;
 	
-	UPROPERTY(EditAnywhere, Category = "Jump")
-	float FForce = 4000;
+	/*UPROPERTY(EditAnywhere, Category = "Jump")
+	float FForce = 4000;*/
 	
 	virtual void Tick(float DeltaSeconds) override;
 
@@ -40,7 +36,12 @@ class AUnknownSteampunkCharacter : public ACharacter
 	bool QKey = 0;
 	UPROPERTY(EditAnywhere,Category = "Soaring")
 	double Gravity{0.01};
-
+	UPROPERTY(EditAnywhere,Category = "Soaring")
+	double DefaultCharacterGravity{2};
+	UPROPERTY(EditAnywhere,Category = "Soaring")
+	double SoaringAcceleration{0};
+	UPROPERTY(EditAnywhere,Category = "Soaring")
+	double DefaultMaxAcceleration{0};
 	//particle system
 	UParticleSystem* UPart;
 	UParticleSystem* UPartFire;
@@ -75,6 +76,7 @@ class AUnknownSteampunkCharacter : public ACharacter
 	FComponentQueryParams DefaultComponentQueryParams;
 	FCollisionResponseParams DefaultResponseParam;
 
+
 protected:
 
 	/** Called for side to side input */
@@ -87,11 +89,12 @@ protected:
 	// End of APawn interface
 	void UpdateCharacter();
 	void UpdatePickupAndRotate();
+	void UpdateWallJump();
 	void ParticleToggle();
 
 	// pickup and rotate
 	void ToggleItemPickup();
-
+    void ToggleJumpParticles();
 
 	void OnAction();
 public:
