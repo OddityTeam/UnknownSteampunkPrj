@@ -4,6 +4,7 @@
 #include "../PickupAndRotateActor/PickupAndRotateActor.h"
 #include "Kismet/GameplayStatics.h"
 #include "GameFramework/Character.h"
+#include "GameFramework/CharacterMovementComponent.h"
 // Sets default values
 APickupAndRotateActor::APickupAndRotateActor()
 {
@@ -17,7 +18,7 @@ APickupAndRotateActor::APickupAndRotateActor()
 
 // add Cylinder to root
  MyMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("VisualRepresentation"));
- MyMesh->SetSimulatePhysics(true);
+ MyMesh->SetSimulatePhysics(false);
     MyMesh->SetupAttachment(RootComponent);
 
     static ConstructorHelpers::FObjectFinder<UStaticMesh> CylinderAsset(TEXT("/Game/StarterContent/Cylinder"));
@@ -28,6 +29,7 @@ APickupAndRotateActor::APickupAndRotateActor()
         MyMesh->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
         MyMesh->SetWorldScale3D(FVector(1.f));
 	}
+	
 }
 
 // Called when the game starts or when spawned
@@ -62,9 +64,8 @@ void APickupAndRotateActor::Tick(float DeltaTime)
 
 	if(bHolding && HoldingComp)
 	{
-		SetActorLocationAndRotation(HoldingComp->GetComponentLocation(), HoldingComp->GetComponentRotation());
+		SetActorLocationAndRotation(FVector(MyMesh->GetComponentLocation().X,HoldingComp->GetComponentLocation().Y+50,MyMesh->GetComponentLocation().Z), HoldingComp->GetComponentRotation());
 	}
-
 }
 
 void APickupAndRotateActor::RotateActor()
@@ -78,14 +79,7 @@ void APickupAndRotateActor::Pickup()
 {
 	bHolding = !bHolding;	
 	bGravity = !bGravity;
-	MyMesh->SetEnableGravity(bGravity);
-	MyMesh->SetSimulatePhysics(bHolding ? false : true);
-	MyMesh->SetCollisionEnabled(bHolding ? ECollisionEnabled::NoCollision : ECollisionEnabled::QueryAndPhysics);
-
-	if(!bHolding) 
-	{
-		ForwardVector = PlayerCapsule->GetForwardVector();
-		MyMesh->AddForce(ForwardVector*10*MyMesh->GetMass());
-	}
-
+	//MyMesh->SetEnableGravity(bGravity);
+	//MyMesh->SetSimulatePhysics(bHolding ? true : false);
+	MyMesh->SetCollisionEnabled(/*bHolding ? ECollisionEnabled::NoCollision :*/ ECollisionEnabled::QueryAndPhysics);//
 }

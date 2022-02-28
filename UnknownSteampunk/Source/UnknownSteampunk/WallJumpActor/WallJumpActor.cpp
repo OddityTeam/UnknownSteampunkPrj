@@ -40,22 +40,6 @@ void AWallJumpActor::BeginPlay()
 	
 	MyCharacter = UGameplayStatics::GetPlayerCharacter(this, 0);
 	PlayerCapsule = MyCharacter->FindComponentByClass<UCapsuleComponent>();
-
-	TArray<USceneComponent*> Components;
- 
-	//MyCharacter->GetComponents(Components);
-
-	/*
-	if(Components.Num() > 0)
-	{
-		for (auto& Comp : Components)
-		{
-			if(Comp->GetName() == "HoldingComponent")
-			{
-				HoldingComp = Cast<USceneComponent>(Comp);
-			}
-		}
-	}*/
 }
 
 // Called every frame
@@ -73,11 +57,27 @@ void AWallJumpActor::WallJump()
 	if ((MyCharacter->JumpCurrentCount <= MyCharacter->JumpMaxCount) && (MyCharacter->JumpCurrentCount > 0) /*&&(TravelDirection == 0) && AxisMoving*/) //TODO
 		{
 		
-		if (IsRootComponentCollisionRegistered())
+		//if (IsRootComponentCollisionRegistered())
 		{
-			MyCharacter->GetCharacterMovement()->AddImpulse(FVector(0,-MyCharacter->GetActorForwardVector().Y,FZAxisScale)
-				*FForce*MyCharacter->GetMesh()->GetMass());
-			MyCharacter->SetActorRotation(FRotator(0,MyCharacter->GetControlRotation().Yaw-180,0));
+			
+			float TravelDirection = GetVelocity().Y;
+			// Set the rotation so that the character faces his direction of travel.
+			if (MyCharacter->Controller != nullptr)
+			{
+				if (TravelDirection < 0.0f)
+				{
+					FYAxisScale = -FYAxisScale;
+				}
+				else if (TravelDirection > 0.0f)
+				{
+					FYAxisScale = abs(FYAxisScale);
+				}
+			}
+			MyCharacter->GetCharacterMovement()->AddImpulse(
+				FVector(0,(FYAxisScale),FZAxisScale)
+				*FForce/**MyCharacter->GetMesh()->GetMass()*/);
+			MyCharacter->Controller->SetControlRotation(FRotator(0,(MyCharacter->GetControlRotation().Yaw-180),0));
+			MyCharacter->JumpCurrentCount++;
 		}
 		}
 

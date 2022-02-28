@@ -21,7 +21,7 @@ void EmptyLinkFunctionForGeneratedCodeUnknownSteampunk_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x067D62CB,
+				0x051C4FC8,
 				0x71469471,
 				METADATA_PARAMS(nullptr, 0)
 			};

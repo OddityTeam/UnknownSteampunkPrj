@@ -26,9 +26,7 @@ class AUnknownSteampunkCharacter : public ACharacter
 	UPROPERTY(EditAnywhere)
 	class USceneComponent* HoldingComponent;
 	
-	/*UPROPERTY(EditAnywhere, Category = "Jump")
-	float FForce = 4000;*/
-	
+
 	virtual void Tick(float DeltaSeconds) override;
 
 	bool AxisMoving = 0;

@@ -18,10 +18,10 @@ AUnknownSteampunkCharacter::AUnknownSteampunkCharacter()
 {
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
-	SetActorEnableCollision(true);
+	//SetActorEnableCollision(true);
 	// Don't rotate when the controller rotates.
 	bUseControllerRotationPitch = false;
-	bUseControllerRotationYaw = false;
+	bUseControllerRotationYaw = true;
 	bUseControllerRotationRoll = false;
      
 	// Create a camera boom attached to the root (capsule)
@@ -39,8 +39,8 @@ AUnknownSteampunkCharacter::AUnknownSteampunkCharacter()
 	SideViewCameraComponent->bUsePawnControlRotation = false; // We don't want the controller rotating the camera
 
 	// Configure character movement
-	GetCharacterMovement()->bOrientRotationToMovement = true; // Face in the direction we are moving..
-	GetCharacterMovement()->RotationRate = FRotator(0.0f, 720.0f, 0.0f); // ...at this rotation rate
+	//GetCharacterMovement()->bOrientRotationToMovement = true; // Face in the direction we are moving..
+	//GetCharacterMovement()->RotationRate = FRotator(0.0f, 720.0f, 0.0f); // ...at this rotation rate
 	GetCharacterMovement()->GravityScale = 2.f;
 	GetCharacterMovement()->AirControl = 0.80f;
 	GetCharacterMovement()->JumpZVelocity = 1000.f;
@@ -50,6 +50,10 @@ AUnknownSteampunkCharacter::AUnknownSteampunkCharacter()
 	DefaultMaxAcceleration = GetCharacterMovement()->MaxAcceleration;
 	JumpMaxCount = 2;
 
+	// Lock character motion onto the XZ plane, so the character can't move in or out of the screen
+	GetCharacterMovement()->bConstrainToPlane = true;
+	GetCharacterMovement()->SetPlaneConstraintNormal(FVector(0.0f, -1.0f, 0.0f));
+	
 	// Create a particle system that we can activate or deactivate
 	static ConstructorHelpers::FObjectFinder<UParticleSystem> ParticleSteamAsset(TEXT("/Game/Particles/Steam/P_smoke"));
 	UPart = ParticleSteamAsset.Object;
@@ -90,10 +94,10 @@ AUnknownSteampunkCharacter::AUnknownSteampunkCharacter()
 
 	// pickup and rotate
 	HoldingComponent = CreateDefaultSubobject<USceneComponent>(TEXT("HoldingComponent"));
-	HoldingComponent->SetRelativeLocation(FVector(0,50,50));
-	HoldingComponent->AttachToComponent(this->GetMesh(),
+	HoldingComponent->SetRelativeLocation(FVector(0,100,50));
+	HoldingComponent->SetupAttachment(RootComponent);/*AttachToComponent(this->GetMesh(),
 											  FAttachmentTransformRules(EAttachmentRule::SnapToTarget, true),
-											  TEXT("FP_MuzzleLocation"));
+											  TEXT("FP_MuzzleLocation"));*/
 
 	CurrentItem = NULL;
 	bCanThrow = true;
@@ -234,33 +238,19 @@ void AUnknownSteampunkCharacter::UpdateCharacter()
 		ParticleToggle();
 	}
 	// Now setup the rotation of the controller based on the direction we are travelling
-	float TravelDirection = PlayerVelocity.Y;
+	float TravelDirection = GetVelocity().Y;
 	// Set the rotation so that the character faces his direction of travel.
-	/*if (Controller != nullptr)
+	if (Controller != nullptr)
 	{
 		if (TravelDirection < 0.0f)
 		{
-			Controller->SetControlRotation(FRotator(0.0, 180.0f, 0.0f));
+			Controller->SetControlRotation(FRotator(0.0, 270.0f, 0.0f));
 		}
 		else if (TravelDirection > 0.0f)
 		{
-			Controller->SetControlRotation(FRotator(0.0f, 0.0f, 0.0f));
+			Controller->SetControlRotation(FRotator(0.0f, 90.0f, 0.0f));
 		}
-	}*/
- 
-	// changing second jump vector
-	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("My Location is: %d"), IsRootComponentCollisionRegistered()));
-	/*if ((JumpCurrentCount < JumpMaxCount) && (JumpCurrentCount > 0) &&(TravelDirection == 0) && AxisMoving) //TODO
-	{
-		
-		if (IsRootComponentCollisionRegistered())
-		{
-			GetCharacterMovement()->AddImpulse(FVector(0,-GetActorForwardVector().Y,1)
-				*FForce*GetMesh()->GetMass());
-		}
-	}*/
-
-
+	}
 }
 
 void AUnknownSteampunkCharacter::UpdatePickupAndRotate()
@@ -268,12 +258,12 @@ void AUnknownSteampunkCharacter::UpdatePickupAndRotate()
 	//pickup and rotate
 	Start = GetActorLocation();
 	ForwardVector = GetActorForwardVector();
-	End = ((ForwardVector * FRadius) + Start);
+	End = ((ForwardVector * FRadius) + FVector(Start.X,Start.Y,Start.Z-40));
 
-	//DrawDebugLine(GetWorld(), Start, End, FColor::Green, false, 1, 0, 10);
+	DrawDebugLine(GetWorld(), Start, End, FColor::Green, false, 1, 0, 10);
   
 	if(!bHoldingItem)
-	{  // GetWorld()->LineTraceMultiByChannel(); TODO
+	{  
 		if(GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, DefaultComponentQueryParams, DefaultResponseParam)) 
 		{
 			if(Hit.GetActor()->GetClass()->IsChildOf(APickupAndRotateActor::StaticClass())) 

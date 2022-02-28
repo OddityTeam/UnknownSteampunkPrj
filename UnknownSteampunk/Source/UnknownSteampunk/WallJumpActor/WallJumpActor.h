@@ -23,6 +23,8 @@ class UNKNOWNSTEAMPUNK_API AWallJumpActor : public AActor
 	float FForce = 4000;
 	UPROPERTY(EditAnywhere, Category = "Jump")
 	float FZAxisScale = 1;
+	UPROPERTY(EditAnywhere, Category = "Jump")
+	float FYAxisScale = 1;
 	bool bHolding;
 	bool bGravity;
 
