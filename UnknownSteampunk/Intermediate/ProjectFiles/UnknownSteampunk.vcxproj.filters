@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\UnknownSteampunk.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{433EBE3B-0F94-47D1-BB88-0ADB007E11EA}</UniqueIdentifier>
+      <UniqueIdentifier>{9A525B91-10D9-4385-98D5-FC386EB96D52}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\UnknownSteampunk.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{2B57C806-305C-45B8-AF83-D457761771E6}</UniqueIdentifier>
+      <UniqueIdentifier>{D99D5039-98EF-4807-88E3-5C384DC1B089}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,7 +30,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\UnknownSteampunk">
-      <UniqueIdentifier>{68538BAC-C8A7-4D2D-8A42-776647275CA9}</UniqueIdentifier>
+      <UniqueIdentifier>{EE7490AE-2D54-4948-A009-A4F2D81676D5}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\UnknownSteampunk\UnknownSteampunk.Build.cs">
       <Filter>Source\UnknownSteampunk</Filter>
@@ -54,13 +54,31 @@
       <Filter>Source\UnknownSteampunk</Filter>
     </ClInclude>
     <Filter Include="Source\UnknownSteampunk\Health">
-      <UniqueIdentifier>{C122E70D-E0B6-451C-A42F-4C1AAF723966}</UniqueIdentifier>
+      <UniqueIdentifier>{CCCB8757-FB2D-4100-BAC4-33F8A4014520}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\UnknownSteampunk\Health\HealthComponent.cpp">
       <Filter>Source\UnknownSteampunk\Health</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\UnknownSteampunk\Health\HealthComponent.h">
       <Filter>Source\UnknownSteampunk\Health</Filter>
+    </ClInclude>
+    <Filter Include="Source\UnknownSteampunk\PickupAndRotateActor">
+      <UniqueIdentifier>{7DC5AD57-6EB7-482D-9542-EC2D5934B0BF}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\UnknownSteampunk\PickupAndRotateActor\PickupAndRotateActor.cpp">
+      <Filter>Source\UnknownSteampunk\PickupAndRotateActor</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnknownSteampunk\PickupAndRotateActor\PickupAndRotateActor.h">
+      <Filter>Source\UnknownSteampunk\PickupAndRotateActor</Filter>
+    </ClInclude>
+    <Filter Include="Source\UnknownSteampunk\WallJumpActor">
+      <UniqueIdentifier>{0DCB2297-9867-4A1F-9D32-2209B191A8FB}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\UnknownSteampunk\WallJumpActor\WallJumpActor.cpp">
+      <Filter>Source\UnknownSteampunk\WallJumpActor</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnknownSteampunk\WallJumpActor\WallJumpActor.h">
+      <Filter>Source\UnknownSteampunk\WallJumpActor</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
