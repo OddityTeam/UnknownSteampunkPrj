@@ -18,10 +18,10 @@ AUnknownSteampunkCharacter::AUnknownSteampunkCharacter()
 {
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
-	//SetActorEnableCollision(true);
+	SetActorEnableCollision(true);
 	// Don't rotate when the controller rotates.
 	bUseControllerRotationPitch = false;
-	bUseControllerRotationYaw = true;
+	bUseControllerRotationYaw = false; //true
 	bUseControllerRotationRoll = false;
      
 	// Create a camera boom attached to the root (capsule)
@@ -39,8 +39,8 @@ AUnknownSteampunkCharacter::AUnknownSteampunkCharacter()
 	SideViewCameraComponent->bUsePawnControlRotation = false; // We don't want the controller rotating the camera
 
 	// Configure character movement
-	//GetCharacterMovement()->bOrientRotationToMovement = true; // Face in the direction we are moving..
-	//GetCharacterMovement()->RotationRate = FRotator(0.0f, 720.0f, 0.0f); // ...at this rotation rate
+	GetCharacterMovement()->bOrientRotationToMovement = true; // Face in the direction we are moving..
+	GetCharacterMovement()->RotationRate = FRotator(0.0f, 720.0f, 0.0f); // ...at this rotation rate
 	GetCharacterMovement()->GravityScale = 2.f;
 	GetCharacterMovement()->AirControl = 0.80f;
 	GetCharacterMovement()->JumpZVelocity = 1000.f;
@@ -49,6 +49,7 @@ AUnknownSteampunkCharacter::AUnknownSteampunkCharacter()
 	GetCharacterMovement()->MaxFlySpeed = 600.f;
 	DefaultMaxAcceleration = GetCharacterMovement()->MaxAcceleration;
 	JumpMaxCount = 2;
+	
 
 	// Lock character motion onto the XZ plane, so the character can't move in or out of the screen
 	GetCharacterMovement()->bConstrainToPlane = true;
@@ -138,14 +139,17 @@ void AUnknownSteampunkCharacter::BeginPlay()
 }
 
 //////////////////////////////////////////////////////////////////////////
-// Input
-
+// Input/
+/**
+ * @brief 
+ * @param PlayerInputComponent 
+ */
 void AUnknownSteampunkCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
 {
 	// set up gameplay key bindings
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
-	//PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &AUnknownSteampunkCharacter::ToggleJumpParticles);
-	//PlayerInputComponent->BindAction("Jump", IE_Released, this, &AUnknownSteampunkCharacter::ToggleJumpParticles);
+	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &AUnknownSteampunkCharacter::WallJump);
+	PlayerInputComponent->BindAction("Jump", IE_Released, this, &AUnknownSteampunkCharacter::WallJump);
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
 	PlayerInputComponent->BindAxis("MoveRight", this, &AUnknownSteampunkCharacter::MoveRight);
 	PlayerInputComponent->BindAction("Soaring", IE_Pressed, this, &AUnknownSteampunkCharacter::Soaring);
@@ -171,16 +175,25 @@ void AUnknownSteampunkCharacter::Soaring()
 	// else
 	// {
 	// 	GetCharacterMovement()->GravityScale = DefaultCharacterGravity;
-	// 	GetCharacterMovement()->MaxAcceleration = DefaultMaxAcceleration;
+	// 	GetCharacterMovement()->MaxAcceleration = SoaringAcceleration;
 	// }
 	
 }
 
+void AUnknownSteampunkCharacter::WallJump()
+{
+	if(!QKey)
+	{
+		CanWallJump = !CanWallJump;
+	}
+	
+}
 void AUnknownSteampunkCharacter::MoveRight(float Value)
 {
 	// Apply the input to the character motion
+	
+	GetCharacterMovement()->MaxAcceleration = DefaultMaxAcceleration;
 	float MoveValue = Value;
-
 		if (TurnJump % 2)
 		{
 			MoveValue = -MoveValue;
@@ -193,7 +206,7 @@ void AUnknownSteampunkCharacter::MoveRight(float Value)
 		{
 			AxisMoving = false;
 		}
-	
+
 		AddMovementInput(FVector(0.0f, -1.0f, 0.0f), MoveValue,true);
 	
 	
@@ -217,11 +230,14 @@ void AUnknownSteampunkCharacter::Tick(float DeltaSeconds)
 void AUnknownSteampunkCharacter::UpdateCharacter()
 {
 	const FVector PlayerVelocity = GetVelocity();
+	
+	
 
 	if (QKey && GetCharacterMovement()->IsFalling()&&(PlayerVelocity.Z<0) )
 	{
 		GetCharacterMovement()->GravityScale = Gravity;
 		GetCharacterMovement()->MaxAcceleration = SoaringAcceleration;
+		GetCharacterMovement()->Velocity.Z = SoaringVelocity;
 	}
 	else  // if we jump second time
 	{
@@ -240,7 +256,7 @@ void AUnknownSteampunkCharacter::UpdateCharacter()
 	// Now setup the rotation of the controller based on the direction we are travelling
 	float TravelDirection = GetVelocity().Y;
 	// Set the rotation so that the character faces his direction of travel.
-	if (Controller != nullptr)
+	/*if (Controller != nullptr)
 	{
 		if (TravelDirection < 0.0f)
 		{
@@ -250,7 +266,7 @@ void AUnknownSteampunkCharacter::UpdateCharacter()
 		{
 			Controller->SetControlRotation(FRotator(0.0f, 90.0f, 0.0f));
 		}
-	}
+	}*/
 }
 
 void AUnknownSteampunkCharacter::UpdatePickupAndRotate()
@@ -260,7 +276,7 @@ void AUnknownSteampunkCharacter::UpdatePickupAndRotate()
 	ForwardVector = GetActorForwardVector();
 	End = ((ForwardVector * FRadius) + FVector(Start.X,Start.Y,Start.Z-40));
 
-	DrawDebugLine(GetWorld(), Start, End, FColor::Green, false, 1, 0, 10);
+	//DrawDebugLine(GetWorld(), Start, End, FColor::Green, false, 1, 0, 10);
   
 	if(!bHoldingItem)
 	{  
@@ -343,32 +359,15 @@ void AUnknownSteampunkCharacter::ToggleJumpParticles()
 	}
 }
 
-void AUnknownSteampunkCharacter::UpdateWallJump()
-{
-	/*//wall jump
-	Start = GetActorLocation();
-	ForwardVector = GetActorForwardVector();
-	End = ((ForwardVector * FRadius) + Start);
 
-	//DrawDebugLine(GetWorld(), Start, End, FColor::Green, false, 1, 0, 10);
-  
-	if(!bHoldingItem)
-	{  // TODO
-		
-		if(GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, DefaultComponentQueryParams, DefaultResponseParam)) 
-		{
-			if(Hit.GetActor()->GetClass()->IsChildOf(AWallJumpActor::StaticClass())) 
-			{				
-				CurrentItem = Cast<AWallJumpActor>(Hit.GetActor());
-			}
-		}
-		else
-		{
-			CurrentItem = NULL;
-		}
-	}
-	else
-	{
-				CurrentItem->WallJump();
-	}*/
+
+bool AUnknownSteampunkCharacter::IsSoaring()
+{
+	return QKey;
+}
+
+
+bool AUnknownSteampunkCharacter::IsWallJump()
+{
+	return CanWallJump;
 }

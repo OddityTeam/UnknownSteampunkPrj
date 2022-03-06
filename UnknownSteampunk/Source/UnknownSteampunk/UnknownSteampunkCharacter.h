@@ -31,6 +31,7 @@ class AUnknownSteampunkCharacter : public ACharacter
 
 	bool AxisMoving = 0;
 	int TurnJump = 0;
+	bool CanWallJump = 0;
 	bool QKey = 0;
 	UPROPERTY(EditAnywhere,Category = "Soaring")
 	double Gravity{0.01};
@@ -40,6 +41,8 @@ class AUnknownSteampunkCharacter : public ACharacter
 	double SoaringAcceleration{0};
 	UPROPERTY(EditAnywhere,Category = "Soaring")
 	double DefaultMaxAcceleration{0};
+	UPROPERTY(EditAnywhere,Category = "Soaring")
+	double SoaringVelocity{-20};
 	//particle system
 	UParticleSystem* UPart;
 	UParticleSystem* UPartFire;
@@ -74,20 +77,20 @@ class AUnknownSteampunkCharacter : public ACharacter
 	FComponentQueryParams DefaultComponentQueryParams;
 	FCollisionResponseParams DefaultResponseParam;
 
-
+///
 protected:
 
 	/** Called for side to side input */
 	void MoveRight(float Val);
 
     void Soaring();
-
+    
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 	// End of APawn interface
 	void UpdateCharacter();
 	void UpdatePickupAndRotate();
-	void UpdateWallJump();
+	void WallJump();
 	void ParticleToggle();
 
 	// pickup and rotate
@@ -99,6 +102,8 @@ public:
 	AUnknownSteampunkCharacter();
     virtual void PostInitializeComponents() override;
 	virtual void BeginPlay() override;
+	bool IsSoaring();
+	bool IsWallJump();
 	/** Returns SideViewCameraComponent subobject **/
 	FORCEINLINE class UCameraComponent* GetSideViewCameraComponent() const { return SideViewCameraComponent; }
 	/** Returns CameraBoom subobject **/

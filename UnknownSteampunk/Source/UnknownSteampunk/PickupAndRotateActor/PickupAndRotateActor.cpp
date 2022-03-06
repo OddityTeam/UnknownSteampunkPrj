@@ -8,6 +8,8 @@
 // Sets default values
 APickupAndRotateActor::APickupAndRotateActor()
 {
+	
+	
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
@@ -29,6 +31,7 @@ APickupAndRotateActor::APickupAndRotateActor()
         MyMesh->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
         MyMesh->SetWorldScale3D(FVector(1.f));
 	}
+	MyMesh->SetConstraintMode(EDOFMode::Type::YZPlane);
 	
 }
 
@@ -79,7 +82,7 @@ void APickupAndRotateActor::Pickup()
 {
 	bHolding = !bHolding;	
 	bGravity = !bGravity;
-	//MyMesh->SetEnableGravity(bGravity);
-	//MyMesh->SetSimulatePhysics(bHolding ? true : false);
+	MyMesh->SetEnableGravity(bGravity);
+	MyMesh->SetSimulatePhysics(bHolding ? true : false);
 	MyMesh->SetCollisionEnabled(/*bHolding ? ECollisionEnabled::NoCollision :*/ ECollisionEnabled::QueryAndPhysics);//
 }

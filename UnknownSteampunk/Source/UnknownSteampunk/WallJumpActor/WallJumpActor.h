@@ -6,8 +6,13 @@
 #include "GameFramework/Actor.h"
 // include capsule component
 #include "Components/CapsuleComponent.h"
+
 #include "WallJumpActor.generated.h"
 
+/**
+ * @brief 
+ */
+/class AUnknownSteampunkCharacter;
 UCLASS()
 class UNKNOWNSTEAMPUNK_API AWallJumpActor : public AActor
 {
@@ -27,11 +32,16 @@ class UNKNOWNSTEAMPUNK_API AWallJumpActor : public AActor
 	float FYAxisScale = 1;
 	bool bHolding;
 	bool bGravity;
-
+    bool jump;
 	FRotator ControlRotation;
-	ACharacter* MyCharacter;
+	AUnknownSteampunkCharacter* MyCharacter; 
 	UCapsuleComponent* PlayerCapsule;
 	FVector ForwardVector;
+
+	// create trigger capsule
+	// UPROPERTY(VisibleAnywhere, Category = "Trigger Capsule")
+	// class UCapsuleComponent* TriggerCapsule;
+	
 public:	
 	// Sets default values for this actor's properties
 	AWallJumpActor();
@@ -43,7 +53,15 @@ protected:
 	UFUNCTION()
 	void OnCompHit(UPrimitiveComponent* HitComp, AActor* OtherActor,
 		UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
-	
+
+
+	// // declare overlap begin function
+	// UFUNCTION()
+	// void OnOverlapBegin(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+	//
+	// // declare overlap end function
+	// UFUNCTION()
+	// void OnOverlapEnd(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
