@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\UnknownSteampunk.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{9A525B91-10D9-4385-98D5-FC386EB96D52}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\UnknownSteampunk.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\UnknownSteampunkEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{D99D5039-98EF-4807-88E3-5C384DC1B089}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\UnknownSteampunk">
+      <UniqueIdentifier>{EE7490AE-2D54-4948-A009-A4F2D81676D5}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\UnknownSteampunk\UnknownSteampunk.Build.cs">
+      <Filter>Source\UnknownSteampunk</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\UnknownSteampunk\UnknownSteampunk.cpp">
+      <Filter>Source\UnknownSteampunk</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnknownSteampunk\UnknownSteampunk.h">
+      <Filter>Source\UnknownSteampunk</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnknownSteampunk\UnknownSteampunkCharacter.cpp">
+      <Filter>Source\UnknownSteampunk</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnknownSteampunk\UnknownSteampunkCharacter.h">
+      <Filter>Source\UnknownSteampunk</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnknownSteampunk\UnknownSteampunkGameMode.cpp">
+      <Filter>Source\UnknownSteampunk</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnknownSteampunk\UnknownSteampunkGameMode.h">
+      <Filter>Source\UnknownSteampunk</Filter>
+    </ClInclude>
+    <Filter Include="Source\UnknownSteampunk\Health">
+      <UniqueIdentifier>{CCCB8757-FB2D-4100-BAC4-33F8A4014520}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\UnknownSteampunk\Health\HealthComponent.cpp">
+      <Filter>Source\UnknownSteampunk\Health</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnknownSteampunk\Health\HealthComponent.h">
+      <Filter>Source\UnknownSteampunk\Health</Filter>
+    </ClInclude>
+    <Filter Include="Source\UnknownSteampunk\PickupAndRotateActor">
+      <UniqueIdentifier>{7DC5AD57-6EB7-482D-9542-EC2D5934B0BF}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\UnknownSteampunk\PickupAndRotateActor\PickupAndRotateActor.cpp">
+      <Filter>Source\UnknownSteampunk\PickupAndRotateActor</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnknownSteampunk\PickupAndRotateActor\PickupAndRotateActor.h">
+      <Filter>Source\UnknownSteampunk\PickupAndRotateActor</Filter>
+    </ClInclude>
+    <Filter Include="Source\UnknownSteampunk\WallJumpActor">
+      <UniqueIdentifier>{0DCB2297-9867-4A1F-9D32-2209B191A8FB}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\UnknownSteampunk\WallJumpActor\WallJumpActor.cpp">
+      <Filter>Source\UnknownSteampunk\WallJumpActor</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnknownSteampunk\WallJumpActor\WallJumpActor.h">
+      <Filter>Source\UnknownSteampunk\WallJumpActor</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

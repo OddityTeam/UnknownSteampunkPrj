@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "UnknownSteampunk",
+			"Path": "C:\\Users\\ik760\\Downloads\\Telegram Desktop\\PreBuild\\UnknownSteampunk\\Source\\UnknownSteampunk.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "UnknownSteampunkEditor",
+			"Path": "C:\\Users\\ik760\\Downloads\\Telegram Desktop\\PreBuild\\UnknownSteampunk\\Source\\UnknownSteampunkEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

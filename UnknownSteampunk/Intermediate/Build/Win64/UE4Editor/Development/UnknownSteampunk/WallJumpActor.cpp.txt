@@ -1,10 +1,10 @@
-C:\Users\ik76\Downloads\UnknownSteampunkPrj-version1.0\UnknownSteampunkPrj-version1.0\UnknownSteampunk\Intermediate\Build\Win64\UE4Editor\Development\UnknownSteampunk\Definitions.UnknownSteampunk.h
-C:\Users\ik76\Downloads\UnknownSteampunkPrj-version1.0\UnknownSteampunkPrj-version1.0\UnknownSteampunk\Source\UnknownSteampunk\WallJumpActor\../WallJumpActor/WallJumpActor.h
+C:\Users\ik76\Documents\GitHub\UnknownSteampunkPrj\UnknownSteampunk\Intermediate\Build\Win64\UE4Editor\Development\UnknownSteampunk\Definitions.UnknownSteampunk.h
+C:\Users\ik76\Documents\GitHub\UnknownSteampunkPrj\UnknownSteampunk\Source\UnknownSteampunk\WallJumpActor\../WallJumpActor/WallJumpActor.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Components/CapsuleComponent.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Components/ShapeComponent.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ShapeComponent.generated.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\CapsuleComponent.generated.h
-C:\Users\ik76\Downloads\UnknownSteampunkPrj-version1.0\UnknownSteampunkPrj-version1.0\UnknownSteampunk\Intermediate\Build\Win64\UE4Editor\Inc\UnknownSteampunk\WallJumpActor.generated.h
+C:\Users\ik76\Documents\GitHub\UnknownSteampunkPrj\UnknownSteampunk\Intermediate\Build\Win64\UE4Editor\Inc\UnknownSteampunk\WallJumpActor.generated.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\ThirdParty/openexr/Deploy/OpenEXR-2.3.0/OpenEXR/include/ImathFun.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\ThirdParty\openexr\Deploy\OpenEXR-2.3.0\OpenEXR\include\ImathExport.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\ThirdParty\openexr\Deploy\OpenEXR-2.3.0\OpenEXR\include\ImathLimits.h
@@ -42,7 +42,7 @@ C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\In
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Interfaces/NetworkPredictionInterface.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\NetworkPredictionInterface.generated.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\CharacterMovementComponent.generated.h
-C:\Users\ik76\Downloads\UnknownSteampunkPrj-version1.0\UnknownSteampunkPrj-version1.0\UnknownSteampunk\Source\UnknownSteampunk/UnknownSteampunkCharacter.h
-C:\Users\ik76\Downloads\UnknownSteampunkPrj-version1.0\UnknownSteampunkPrj-version1.0\UnknownSteampunk\Source\UnknownSteampunk\PickupAndRotateActor/PickupAndRotateActor.h
-C:\Users\ik76\Downloads\UnknownSteampunkPrj-version1.0\UnknownSteampunkPrj-version1.0\UnknownSteampunk\Intermediate\Build\Win64\UE4Editor\Inc\UnknownSteampunk\PickupAndRotateActor.generated.h
-C:\Users\ik76\Downloads\UnknownSteampunkPrj-version1.0\UnknownSteampunkPrj-version1.0\UnknownSteampunk\Intermediate\Build\Win64\UE4Editor\Inc\UnknownSteampunk\UnknownSteampunkCharacter.generated.h
+C:\Users\ik76\Documents\GitHub\UnknownSteampunkPrj\UnknownSteampunk\Source\UnknownSteampunk/UnknownSteampunkCharacter.h
+C:\Users\ik76\Documents\GitHub\UnknownSteampunkPrj\UnknownSteampunk\Source\UnknownSteampunk\PickupAndRotateActor/PickupAndRotateActor.h
+C:\Users\ik76\Documents\GitHub\UnknownSteampunkPrj\UnknownSteampunk\Intermediate\Build\Win64\UE4Editor\Inc\UnknownSteampunk\PickupAndRotateActor.generated.h
+C:\Users\ik76\Documents\GitHub\UnknownSteampunkPrj\UnknownSteampunk\Intermediate\Build\Win64\UE4Editor\Inc\UnknownSteampunk\UnknownSteampunkCharacter.generated.h
