@@ -3,66 +3,111 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "PaperCharacter.h"
+#include "GameFramework/Character.h"
+#include "PickupAndRotateActor/PickupAndRotateActor.h"
+#include "WallJumpActor/WallJumpActor.h"
 #include "UnknownSteampunkCharacter.generated.h"
 
-class UTextRenderComponent;
-
-/**
- * This class is the default character for UnknownSteampunk, and it is responsible for all
- * physical interaction between the player and the world.
- *
- * The capsule component (inherited from ACharacter) handles collision with the world
- * The CharacterMovementComponent (inherited from ACharacter) handles movement of the collision capsule
- * The Sprite component (inherited from APaperCharacter) handles the visuals
- */
 UCLASS(config=Game)
-class AUnknownSteampunkCharacter : public APaperCharacter
+class AUnknownSteampunkCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
 	/** Side view camera */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera, meta=(AllowPrivateAccess="true"))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class UCameraComponent* SideViewCameraComponent;
 
 	/** Camera boom positioning the camera beside the character */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class USpringArmComponent* CameraBoom;
 
-	UTextRenderComponent* TextComponent;
+	
+	/** Holding Component */
+	UPROPERTY(EditAnywhere)
+	class USceneComponent* HoldingComponent;
+	
+
 	virtual void Tick(float DeltaSeconds) override;
+
+	bool AxisMoving = 0;
+	int TurnJump = 0;
+	bool CanWallJump = 0;
+	bool QKey = 0;
+	UPROPERTY(EditAnywhere,Category = "Soaring")
+	double Gravity{0.01};
+	UPROPERTY(EditAnywhere,Category = "Soaring")
+	double DefaultCharacterGravity{2};
+	UPROPERTY(EditAnywhere,Category = "Soaring")
+	double SoaringAcceleration{0};
+	UPROPERTY(EditAnywhere,Category = "Soaring")
+	double DefaultMaxAcceleration{0};
+	UPROPERTY(EditAnywhere,Category = "Soaring")
+	double SoaringVelocity{-20};
+	//particle system
+	UParticleSystem* UPart;
+	UParticleSystem* UPartFire;
+	UParticleSystemComponent* LeftLegParticleSystem;
+	UParticleSystemComponent* RightLegParticleSystem;
+
+	
+	UPROPERTY(EditAnywhere, Category = "Audio")
+	USoundBase* SoaringAudioBase;
+	UPROPERTY(EditAnywhere, Category = "Audio")
+	UAudioComponent* SoaringAudioComponent;
+
+
+	//pickup and rotate
+	UPROPERTY(EditAnywhere, Category = "Collision")
+	float FRadius = 200;
+	bool bCanThrow;
+	bool bHoldingItem;
+	bool bInspecting;
+	UPROPERTY(EditAnywhere)
+	class APickupAndRotateActor* CurrentItem;
+	
+	FVector HoldingComp;
+	FRotator LastRotation;
+
+	FVector Start;
+	FVector ForwardVector;
+	FVector End;
+
+	FHitResult Hit;
+	
+	FComponentQueryParams DefaultComponentQueryParams;
+	FCollisionResponseParams DefaultResponseParam;
+
+///
 protected:
-	// The animation to play while running around
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Animations)
-	class UPaperFlipbook* RunningAnimation;
-
-	// The animation to play while idle (standing still)
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Animations)
-	class UPaperFlipbook* IdleAnimation;
-
-	/** Called to choose the correct animation to play based on the character's movement state */
-	void UpdateAnimation();
 
 	/** Called for side to side input */
-	void MoveRight(float Value);
+	void MoveRight(float Val);
 
-	void UpdateCharacter();
-
-	/** Handle touch inputs. */
-	void TouchStarted(const ETouchIndex::Type FingerIndex, const FVector Location);
-
-	/** Handle touch stop event. */
-	void TouchStopped(const ETouchIndex::Type FingerIndex, const FVector Location);
-
+    void Soaring();
+    
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 	// End of APawn interface
+	void UpdateCharacter();
+	void UpdatePickupAndRotate();
+	void WallJump();
+	void ParticleToggle();
 
+	// pickup and rotate
+	void ToggleItemPickup();
+    void ToggleJumpParticles();
+
+	void OnAction();
 public:
 	AUnknownSteampunkCharacter();
-
+    virtual void PostInitializeComponents() override;
+	virtual void BeginPlay() override;
+	bool IsSoaring();
+	bool IsWallJump();
 	/** Returns SideViewCameraComponent subobject **/
 	FORCEINLINE class UCameraComponent* GetSideViewCameraComponent() const { return SideViewCameraComponent; }
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
+
+
 };
